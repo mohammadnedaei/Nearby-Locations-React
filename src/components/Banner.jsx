@@ -1,20 +1,21 @@
 import {SpeakerphoneIcon, XIcon} from '@heroicons/react/outline';
 import {useMemo, useState} from "react";
 
-export default function StickyBanner(props) {
+export default function Banner(props) {
     const [show, setShow] = useState(true);
     const bannerPlace = useMemo(() => {
-        return props.bannerFixedPlace == 'bottom' ? {
-            bottom: 0
+        return props.bannerPlace == 'bottom' ? {
+            bottom: 0,
+            position: 'fixed',
+            width: '100%'
         } : {
-            top:0
         }
     }, [])
     if (window.localStorage.getItem('seen_banner')) {
         return <></>
     }
         return (show ?
-            <div style={{position:'fixed', width: '100%', ...props.bannerStyle, ...bannerPlace}} className={`bg-indigo-600 ${props.bannerBackground}`}>
+            <div style={{zIndex: 99, ...props.bannerStyle, ...bannerPlace}} className={`bg-indigo-600 ${props.bannerBackground}`}>
                 <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between flex-wrap">
                         <div className="w-0 flex-1 flex items-center">

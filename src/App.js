@@ -1,23 +1,25 @@
 import './App.css';
-import StickyBanner from './components/StickyBanner';
+import Banner from './components/Banner';
+import HeroSection1 from "./components/HeroSection1";
 
+//TODO: StoryBook
 function App() {
     return (
         <div>
-            <StickyBanner
+            <Banner
                 bannerTitle={"Big news!"}
                 bannerDescription={"Introducing Android version of app."}
                 bannerButtonText={"Learn more"}
-                bannerFixedPlace={"top"}
+                bannerPlace={"top"}
                 bannerButtonUrl={"https://gitlab.com"}
             />
+            <HeroSection1
+                heroSection1Title={"Find nearby locations easily"}
+                heroSection1Description={"A public service to explore your current nearby locations as fast as possible." +
+                " Even more, find your nearby locations details."}
+                heroSection1ButtonText={"Explore Locations"}
+            />
 
-            <h1>Hi</h1>
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            <h1>Hi</h1>
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            <h1>Hi</h1>
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </div>
     );
 }
