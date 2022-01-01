@@ -1,5 +1,5 @@
 import {Button, Skeleton} from "@mui/material";
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useState} from "react";
 
 const HeroSection1Images = {
     img1: 'https://www.npg.org.uk/assets/images/Slideshows/food/571_restaurant_4.jpg',
@@ -18,15 +18,15 @@ const HeroSection1Images = {
     title7: 'Food Restaurant2'
 }
 const HeroSection1 = (props) => {
-const [isLoaded, setLoaded] = useState(false);
+// const [isLoaded, setLoaded] = useState(false);
 const [record, setRecord] = useState({
-    "Food Restaurant": false,
-    "London Buckingham": false
+    title1: false,
+    title2: false
 })
 
-    useEffect(() => {
-        setRecord({...record, "Food Restaurant": true})
-    }, []);
+    const onLoadChange (a) = useCallback(() => {
+        setRecord({...record, a: true})
+    }, [])
     return (
         <div className="mt-20 relative bg-white overflow-hidden">
             <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
@@ -50,24 +50,20 @@ const [record, setRecord] = useState({
                                     <div className="mt-10 flex items-center space-x-6 lg:space-x-8">
                                         <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                                             <div className="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100">
-                                                {"Food Restaurant" ? null : (
+                                                {record.title1 ? null : (
                                                     <Skeleton animation="wave" variant="rectangular" style={{height: '100%'}}/>
                                                     )}
                                                     <img
-                                                    // style={isLoaded ? {} : {display: 'none'}}
-                                                        style={"Food Restaurant" ? {} : {display: 'none'}}
+                                                        style={record.title1 ? {} : {display: 'none'}}
                                                         src={HeroSection1Images.img1}
-                                                    // onLoad={() => setLoaded({isLoaded: true})}
-                                                        onLoad={useCallback(() => {
-                                                            setRecord({...record, "Food Restaurant": true})
-                                                        },[record])}
+                                                        onLoad={() => onLoadChange(title1)}
                                                     alt=""
                                                     className="w-full h-full object-center object-cover"
                                                     />
                                                     )}
                                             </div>
                                             <div className="w-44 h-64 rounded-lg overflow-hidden">
-                                                <img
+                                             <img
                                                     src={HeroSection1Images.img2}
                                                     alt=""
                                                     className="w-full h-full object-center object-cover"
