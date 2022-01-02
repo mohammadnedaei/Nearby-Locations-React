@@ -13,7 +13,7 @@ function App() {
     const handleDialogClose = () => {
         setOpen(false);
     }
-    //TODO: useCallbacl()
+    //TODO: useCallback()
     const handleLocationAvailability = () => {
         setOpen(false);
         if (navigator.geolocation) {
