@@ -16,10 +16,37 @@ function App() {
     const handleLocationAvailability = () => {
         setOpen(false);
         if (navigator.geolocation) {
-            console.log("yay");
+            console.log("Device has Geolocation Availability");
+            navigator.permissions.query({name: "geolocation"}).then((result) => {
+                if (result.state === "granted") {
+                    console.log(result.state);
+                    navigator.geolocation.getCurrentPosition(success);
+                }
+                else if (result.state === "prompt"){
+                    console.log(result.state);
+                    navigator.geolocation.getCurrentPosition(success, errors, options);
+                }
+                else if (result.state === "denied") {
+                    console.log(result.state);
+                }
+            })
         }
     }
-
+    const options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+    }
+    const success = (pos) => {
+        let coordinate = pos.coords;
+        console.log("Your current position is:");
+        console.log(`Latitude : ${coordinate.latitude}`);
+        console.log(`Longitude: ${coordinate.longitude}`);
+        console.log(`More or less ${coordinate.accuracy} meters.`);
+    }
+    const errors = (error) => {
+        console.warn(`ERROR(${error.code}): ${error.message}`);
+    }
     return (
         <div>
             <Banner
