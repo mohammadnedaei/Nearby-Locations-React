@@ -21,12 +21,15 @@ const HeroSection1 = (props) => {
 // const [isLoaded, setLoaded] = useState(false);
 const [record, setRecord] = useState({
     title1: false,
-    title2: false
+    title2: false,
+    title3: false,
+    title4: false,
+    title5: false,
+    title6: false,
+    title7: false
 })
-    const onLoadChange = useCallback((entity) => {
-        console.log(entity);
-        setRecord({...record, entity : true})
-        console.log(entity);
+    const onLoadChange = useCallback((title) => {
+        setRecord({...record, [title] : true})
     }, [record])
     return (
         <div className="mt-20 relative bg-white overflow-hidden">
@@ -57,57 +60,93 @@ const [record, setRecord] = useState({
                                                     <img
                                                         style={record.title1 ? {} : {display: 'none'}}
                                                         src={HeroSection1Images.img1}
-                                                        onLoad={() => onLoadChange(record.title1)}
-                                                    alt=""
+                                                        onLoad={() => onLoadChange("title1")}
+                                                        alt={HeroSection1Images.title1}
                                                     className="w-full h-full object-center object-cover"
                                                     />
                                                     )}
                                             </div>
                                             <div className="w-44 h-64 rounded-lg overflow-hidden">
-                                             <img
+                                                {record.title2 ? null : (
+                                                    <Skeleton animation="wave" variant="rectangular" style={{height: '100%'}}/>
+                                                )}
+                                                <img
+                                                    style={record.title2 ? {} : {display: 'none'}}
                                                     src={HeroSection1Images.img2}
-                                                    alt=""
+                                                    onLoad={() => onLoadChange("title2")}
+                                                    alt={HeroSection1Images.title2}
                                                     className="w-full h-full object-center object-cover"
                                                 />
+                                                )}
                                             </div>
                                         </div>
                                         <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                                             <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                                {record.title3 ? null : (
+                                                    <Skeleton animation="wave" variant="rectangular" style={{height: '100%'}}/>
+                                                )}
                                                 <img
+                                                    style={record.title3 ? {} : {display: 'none'}}
                                                     src={HeroSection1Images.img3}
-                                                    alt=""
+                                                    onLoad={() => onLoadChange("title3")}
+                                                    alt={HeroSection1Images.title3}
                                                     className="w-full h-full object-center object-cover"
                                                 />
+                                                )}
                                             </div>
                                             <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                                {record.title4 ? null : (
+                                                    <Skeleton animation="wave" variant="rectangular" style={{height: '100%'}}/>
+                                                )}
                                                 <img
+                                                    style={record.title4 ? {} : {display: 'none'}}
                                                     src={HeroSection1Images.img4}
-                                                    alt="dominant"
+                                                    onLoad={() => onLoadChange("title4")}
+                                                    alt={HeroSection1Images.title4}
                                                     className="w-full h-full object-center object-cover"
                                                 />
+                                                )}
                                             </div>
                                             <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                                {record.title5 ? null : (
+                                                    <Skeleton animation="wave" variant="rectangular" style={{height: '100%'}}/>
+                                                )}
                                                 <img
+                                                    style={record.title5 ? {} : {display: 'none'}}
                                                     src={HeroSection1Images.img5}
-                                                    alt=""
+                                                    onLoad={() => onLoadChange("title5")}
+                                                    alt={HeroSection1Images.title5}
                                                     className="w-full h-full object-center object-cover"
                                                 />
+                                                )}
                                             </div>
                                         </div>
                                         <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                                             <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                                {record.title6 ? null : (
+                                                    <Skeleton animation="wave" variant="rectangular" style={{height: '100%'}}/>
+                                                )}
                                                 <img
+                                                    style={record.title6 ? {} : {display: 'none'}}
                                                     src={HeroSection1Images.img6}
-                                                    alt=""
+                                                    onLoad={() => onLoadChange("title6")}
+                                                    alt={HeroSection1Images.title6}
                                                     className="w-full h-full object-center object-cover"
                                                 />
+                                                )}
                                             </div>
                                             <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                                {record.title7 ? null : (
+                                                    <Skeleton animation="wave" variant="rectangular" style={{height: '100%'}}/>
+                                                )}
                                                 <img
+                                                    style={record.title7 ? {} : {display: 'none'}}
                                                     src={HeroSection1Images.img7}
-                                                    alt=""
+                                                    onLoad={() => onLoadChange("title7")}
+                                                    alt={HeroSection1Images.title7}
                                                     className="w-full h-full object-center object-cover"
                                                 />
+                                                )}
                                             </div>
                                         </div>
                                     </div>
