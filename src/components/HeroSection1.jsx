@@ -23,10 +23,11 @@ const [record, setRecord] = useState({
     title1: false,
     title2: false
 })
-
-    const onLoadChange (a) = useCallback(() => {
-        setRecord({...record, a: true})
-    }, [])
+    const onLoadChange = useCallback((entity) => {
+        console.log(entity);
+        setRecord({...record, entity : true})
+        console.log(entity);
+    }, [record])
     return (
         <div className="mt-20 relative bg-white overflow-hidden">
             <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
@@ -56,7 +57,7 @@ const [record, setRecord] = useState({
                                                     <img
                                                         style={record.title1 ? {} : {display: 'none'}}
                                                         src={HeroSection1Images.img1}
-                                                        onLoad={() => onLoadChange(title1)}
+                                                        onLoad={() => onLoadChange(record.title1)}
                                                     alt=""
                                                     className="w-full h-full object-center object-cover"
                                                     />
@@ -113,7 +114,7 @@ const [record, setRecord] = useState({
                                 </div>
                             </div>
 
-                            <Button color="warning" variant="contained">{props.heroSection1ButtonText}</Button>
+                            <Button onClick={props.heroSection1ButtonOnClick} color="warning" variant="contained">{props.heroSection1ButtonText}</Button>
                         </div>
                     </div>
                 </div>
