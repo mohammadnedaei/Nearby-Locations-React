@@ -6,7 +6,12 @@ import {Alert, Button, Dialog, DialogActions, DialogContent, DialogContentText, 
 
 //TODO: StoryBook
 function App() {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false);
+    const [dialog, setDialog] = useState(true);
+    const [teach, setTeacher] = useState(false);
+    const [grant, setGranted] = useState(false);
+    const [prompt, setPrompt] = useState(false);
+    const heroSection1ButtonText = "Explore Locations";
     const handleDialogOpen = () => {
         setOpen(true);
     }
@@ -15,20 +20,32 @@ function App() {
     }
     //TODO: useCallback()
     const handleLocationAvailability = () => {
+        HeroSection1.heroSection1ButtonOnClick = {handleLocationAvailability}
         setOpen(false);
+        setDialog(false);
         if (navigator.geolocation) {
             console.log("Device has Geolocation Availability");
             navigator.permissions.query({name: "geolocation"}).then((result) => {
                 if (result.state === "granted") {
                     console.log(result.state);
                     navigator.geolocation.getCurrentPosition(success);
+                    setTeacher(false);
+                    setGranted(true);
+                    setPrompt(false);
                 }
                 else if (result.state === "prompt"){
                     console.log(result.state);
                     navigator.geolocation.getCurrentPosition(success, errors, options);
+                    setGranted(false);
+                    setTeacher(false);
+                    setPrompt(true);
                 }
                 else if (result.state === "denied") {
+                    setDialog(true);
                     console.log(result.state);
+                    setGranted(false);
+                    setTeacher(true);
+                    setPrompt(false);
                 }
             })
         }
@@ -61,9 +78,10 @@ function App() {
                 heroSection1Title={"Find nearby locations easily"}
                 heroSection1Description={"A public service to explore your current nearby locations as fast as possible." +
                 " Even more, find your nearby locations details."}
-                heroSection1ButtonText={"Explore Locations"}
-                heroSection1ButtonOnClick={handleDialogOpen}
+                heroSection1ButtonText={heroSection1ButtonText}
+                heroSection1ButtonOnClick={dialog ? handleDialogOpen: handleLocationAvailability}
             />
+            {dialog ?
             <Dialog
                 open={open}
                 onClose={handleDialogClose}
@@ -71,12 +89,12 @@ function App() {
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle id="alert-dialog-title">
-                    {"Use Google's location service?"}
+                    {"Use device location service?"}
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                        Let Google help apps determine location. This means sending anonymous
-                        location data to Google, even when no apps are running.
+                        Let your device help us determine your location. This means sending
+                        location data to our server.
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
@@ -85,10 +103,14 @@ function App() {
                         Agree
                     </Button>
                 </DialogActions>
-            </Dialog>
+            </Dialog> : null
+            }
             {(navigator.geolocation) ? null
                 : <Alert style={{position:'fixed', bottom: 0}} severity="error">Sorry, Your device does not support find location!</Alert>
                 }
+            {teach ? <Alert style={{position:'fixed', bottom: 0}} severity="warning">Location permission denied by user. Open site settings and approve permission to continue.</Alert> : null}
+            {grant ? <Alert style={{position:'fixed', bottom: 0}} severity="success">Location permission granted successfully!</Alert> : null}
+            {prompt ? <Alert style={{position:'fixed', bottom: 0}} severity="info">Grant permission and then click on {heroSection1ButtonText}. Waiting for permission pass...</Alert> : null}
         </div>
     );
 }
