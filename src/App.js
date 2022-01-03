@@ -1,11 +1,21 @@
 import './App.css';
-import HomePage from "./pages/Homepage/HomePage";
+import Banner from "./components/Banner";
+import AppRoutes from "./routes";
 
 //TODO: StoryBook
 const App = () => {
 
     return (
-        <HomePage />
+        <div>
+            <Banner
+                bannerTitle={"Big news!"}
+                bannerDescription={"Introducing Android version of app."}
+                bannerButtonText={"Learn more"}
+                bannerPlace={"top"}
+                bannerButtonUrl={"https://gitlab.com"}
+            />
+            <AppRoutes />
+        </div>
     );
 }
 

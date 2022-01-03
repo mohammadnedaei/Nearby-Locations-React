@@ -1,7 +1,7 @@
 import HeroSection1 from "./components/HeroSection1";
 import {useState} from "react";
-import Banner from "../../components/Banner";
 import {Alert, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
 const HomePage = () => {
     const heroSection1ButtonText = "Explore Locations";
@@ -51,25 +51,20 @@ const HomePage = () => {
         timeout: 5000,
         maximumAge: 0
     }
+    const navigate = useNavigate();
     const success = (pos) => {
         let coordinate = pos.coords;
         console.log("Your current position is:");
         console.log(`Latitude : ${coordinate.latitude}`);
         console.log(`Longitude: ${coordinate.longitude}`);
         console.log(`More or less ${coordinate.accuracy} meters.`);
+        navigate("/locations");
     }
     const errors = (error) => {
         console.warn(`ERROR(${error.code}): ${error.message}`);
     }
     return (
         <div>
-            <Banner
-                bannerTitle={"Big news!"}
-                bannerDescription={"Introducing Android version of app."}
-                bannerButtonText={"Learn more"}
-                bannerPlace={"top"}
-                bannerButtonUrl={"https://gitlab.com"}
-            />
             <HeroSection1
                 heroSection1Title={"Find nearby locations easily"}
                 heroSection1Description={"A public service to explore your current nearby locations as fast as possible." +

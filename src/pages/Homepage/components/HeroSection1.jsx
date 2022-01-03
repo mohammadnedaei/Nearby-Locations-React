@@ -153,7 +153,8 @@ const [record, setRecord] = useState({
                                 </div>
                             </div>
 
-                            <Button onClick={props.heroSection1ButtonOnClick} color="warning" variant="contained">{props.heroSection1ButtonText}</Button>
+                            <Button onClick={props.heroSection1ButtonOnClick} color="warning" variant="contained">
+                                {props.heroSection1ButtonText}</Button>
                         </div>
                     </div>
                 </div>

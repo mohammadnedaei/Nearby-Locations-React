@@ -4,7 +4,7 @@ import {useMemo, useState} from "react";
 export default function Banner(props) {
     const [show, setShow] = useState(true);
     const bannerPlace = useMemo(() => {
-        return props.bannerPlace == 'bottom' ? {
+        return props.bannerPlace === 'bottom' ? {
             bottom: 0,
             position: 'fixed',
             width: '100%'
