@@ -53,6 +53,7 @@ const HomePage = () => {
     }
     const navigate = useNavigate();
     const success = (pos) => {
+            //TODO: Handle Network Connection
         let coordinate = pos.coords;
         console.log("Your current position is:");
         console.log(`Latitude : ${coordinate.latitude}`);
