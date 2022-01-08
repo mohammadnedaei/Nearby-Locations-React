@@ -32,28 +32,27 @@ const [record, setRecord] = useState({
         setRecord({...record, [title] : true})
     }, [record])
     return (
-        <div className="mt-20 relative bg-white overflow-hidden">
+        <div className="relative bg-white overflow-hidden" style={{height: '923px'}}>
             <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
-                    <div className="sm:max-w-lg">
+                    <div className="sm:max-w-lg mt-20">
                         <h1 className="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl">
                             {props.heroSection1Title}
                         </h1>
-                        <p className="mt-4 text-xl text-gray-500">
+                        <p className="mt-8 text-2xl text-gray-500">
                             {props.heroSection1Description}
                         </p>
                     </div>
                     <div>
                         <div className="mt-10">
-                            {/* Decorative image grid */}
                             <div
                                 aria-hidden="true"
                                 className="pointer-events-none lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full"
                             >
-                                <div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+                                <div className="mt-10 absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
                                     <div className="mt-10 flex items-center space-x-6 lg:space-x-8">
                                         <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                                            <div className="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100">
+                                            <div className="w-56 h-80 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100">
                                                 {record.title1 ? null : (
                                                     <Skeleton animation="wave" variant="rectangular" style={{height: '100%'}}/>
                                                     )}
@@ -66,7 +65,7 @@ const [record, setRecord] = useState({
                                                     />
                                                     )}
                                             </div>
-                                            <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                            <div className="w-56 h-80 rounded-lg overflow-hidden">
                                                 {record.title2 ? null : (
                                                     <Skeleton animation="wave" variant="rectangular" style={{height: '100%'}}/>
                                                 )}
@@ -81,7 +80,7 @@ const [record, setRecord] = useState({
                                             </div>
                                         </div>
                                         <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                                            <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                            <div className="w-56 h-80 rounded-lg overflow-hidden">
                                                 {record.title3 ? null : (
                                                     <Skeleton animation="wave" variant="rectangular" style={{height: '100%'}}/>
                                                 )}
@@ -94,7 +93,7 @@ const [record, setRecord] = useState({
                                                 />
                                                 )}
                                             </div>
-                                            <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                            <div className="w-56 h-80 rounded-lg overflow-hidden">
                                                 {record.title4 ? null : (
                                                     <Skeleton animation="wave" variant="rectangular" style={{height: '100%'}}/>
                                                 )}
@@ -107,7 +106,7 @@ const [record, setRecord] = useState({
                                                 />
                                                 )}
                                             </div>
-                                            <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                            <div className="w-56 h-80 rounded-lg overflow-hidden">
                                                 {record.title5 ? null : (
                                                     <Skeleton animation="wave" variant="rectangular" style={{height: '100%'}}/>
                                                 )}
@@ -122,7 +121,7 @@ const [record, setRecord] = useState({
                                             </div>
                                         </div>
                                         <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                                            <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                            <div className="w-56 h-80 rounded-lg overflow-hidden">
                                                 {record.title6 ? null : (
                                                     <Skeleton animation="wave" variant="rectangular" style={{height: '100%'}}/>
                                                 )}
@@ -135,7 +134,7 @@ const [record, setRecord] = useState({
                                                 />
                                                 )}
                                             </div>
-                                            <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                            <div className="w-56 h-80 rounded-lg overflow-hidden">
                                                 {record.title7 ? null : (
                                                     <Skeleton animation="wave" variant="rectangular" style={{height: '100%'}}/>
                                                 )}
@@ -153,7 +152,7 @@ const [record, setRecord] = useState({
                                 </div>
                             </div>
 
-                            <Button onClick={props.heroSection1ButtonOnClick} color="warning" variant="contained">
+                            <Button onClick={props.heroSection1ButtonOnClick} size="large" color="warning" variant="contained">
                                 {props.heroSection1ButtonText}</Button>
                         </div>
                     </div>
