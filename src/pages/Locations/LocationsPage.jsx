@@ -1,5 +1,6 @@
 import axios from "axios";
 import {useEffect, useState} from "react";
+import LocationsList from "./components/LocationsList";
 
 const LocationsPage = () => {
     const [locationData , setLocationData] = useState({});
@@ -12,20 +13,20 @@ const LocationsPage = () => {
             .then(function (response) {
                 console.log(response);
                 if (response.status === 200) {
-                    setLocationData(response);
+                    setLocationData(response.data.results);
                 }
             })
             .catch(function (error) {
                 console.log(error);
             });
     },[])
-
     useEffect(() => {
-        alert(JSON.stringify(locationData));
+        console.log(locationData);
     },[locationData])
-
     return(
-        <h1>Hi</h1>
+        <div>
+            <LocationsList />
+        </div>
     )
 }
 export default LocationsPage;
