@@ -1,0 +1,193 @@
+/* Please ❤ this if you like it! 😊 */
+
+//SCSS Variables:
+$bg-color: #f2f6f9;
+$active-color: #25be64;
+$inactive-color: #dadde4;
+$new-color: #febf02;
+$text-color: #141a4e;
+$table-bg-color: #fefefe;
+$table-head-bg-color: #e1e8f2;
+$table-border-color: #edeef2;
+$hover-bg-color: #fb774f;
+$hover-text-color: #ffffff;
+
+//Responsive Breakpoint SCSS Mixin:
+
+//xxs
+@mixin mobile-xxs {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+//min-sm
+@mixin min-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+//md
+@mixin desktop {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+//sm to md
+@mixin tablet-to-desktop {
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+/* Reset Style */
+
+body {
+  background-color: $bg-color;
+}
+
+/* Page Wrapper/Container Style */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Responsive Table Style */
+.responsive-table {
+  background-color: $table-bg-color;
+  border-collapse: collapse;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.02);
+  width: 100%;
+  margin: 2rem 0;
+  overflow: hidden;
+  &__row {
+    display: grid;
+    border-bottom: 1px solid $table-border-color;
+    padding: 0 1.5rem;
+    @include min-tablet {
+      grid-template-columns: 2fr 1fr 2fr 2fr 1fr;
+    }
+    @include tablet-to-desktop {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+    th,
+    td {
+      padding: 1rem;
+    }
+  }
+  &__head {
+    background-color: $table-head-bg-color;
+    @include desktop {
+      display: none;
+    }
+    &__title {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+  }
+  &__body {
+    .responsive-table__row {
+      transition: 0.1s linear;
+      transition-property: color, background;
+      &:last-child {
+        border-bottom: none;
+      }
+      &:hover {
+        color: $hover-text-color;
+        background-color: $hover-bg-color;
+      }
+    }
+    &__text {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      &::before {
+        margin-right: 1rem;
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+      @include desktop {
+        &::before {
+          content: attr(data-title) " :";
+        }
+      }
+      @include mobile-xxs {
+        &::before {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+      }
+      &--name {
+        font-weight: 600;
+        @include min-tablet {
+          &::before {
+            display: none;
+          }
+        }
+        @include tablet-to-desktop {
+          grid-column: 1 / 2;
+          flex-direction: column;
+        }
+      }
+      &--status,
+      &--types,
+      &--update {
+        @include tablet-to-desktop {
+          grid-column: 2/ 3;
+        }
+      }
+      &--country {
+        @include tablet-to-desktop {
+          grid-column: 3/ -1;
+        }
+      }
+      &--name,
+      &--country {
+        @include tablet-to-desktop {
+          grid-row: 2;
+        }
+      }
+    }
+  }
+}
+
+/* User Icon Style */
+.user-icon {
+  width: 100%;
+  max-width: 4rem;
+  height: auto;
+  margin-right: 1rem;
+}
+.icy-avatar {
+background-color: #1ab7c5;
+}
+.red-avatar {
+  background-color: #d01e1e;
+}
+.yellow-avatar {
+  background-color: #e7bb0d;
+}
+.green-avatar {
+  background-color: #4bc71a;
+}
+.blue-avatar {
+  background-color: #1a42c5;
+}
+.purple-avatar {
+  background-color: #5810d5;
+}
+.pink-avatar {
+  background-color: #ab16c2;
+}
+.responsive-table__body__text--country,.responsive-table__body__text--types,.responsive-table__body__text--address,.responsive-table__body__text--distance {
+  margin: auto;
+  text-align: center;
+}
+tr {
+  cursor: pointer;
+}
+.responsive-table__head__title {
+  margin: auto;
+}
