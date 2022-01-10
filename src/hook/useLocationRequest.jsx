@@ -1,23 +1,36 @@
-import {useEffect, useState} from "react";
+import {useCallback, useState} from "react";
 import axios from "axios";
 
-function useLocationRequest() {
-    const [locationData , setLocationData] = useState([]);
-    useEffect(() => {
-        axios.get('https://api.foursquare.com/v3/places/search?ll=36%2C-119&limit=15', {
-            headers: {
-                Authorization: 'fsq3Pf7uqayKsWP6RCLPbEhnAo/WE5mbmhzJum6RNbei4nI='
-            }
-        })
-            .then(function (response) {
-                if (response.status === 200) {
-                    setLocationData(response.data.results);
+function useLocationRequest(pos) {
+    const [locationData, setLocationData] = useState([]);
+    const [call, setCall] = useState(true);
+    const requestCallback = useCallback((pos) => {
+        let coordinate = pos.coords;
+        console.log(pos)
+        let lat = coordinate.latitude;
+        let long = coordinate.longitude;
+        const geoCode = 'll=' + lat + '%2C' + long;
+        console.log(geoCode);
+        if (call) {
+            axios.get('https://api.foursquare.com/v3/places/search?' + geoCode + '&limit=15', {
+                headers: {
+                    Authorization: 'fsq3zB/MV9WboPJuSB+jU32nB3ZuHHWzxTS59ObA8ZlYEzU='
                 }
             })
-            .catch(function (error) {
-                console.log(error);
-            });
-    },[])
-    return  {locationData};
+                .then(function (response) {
+                    if (response.status === 200) {
+                        setCall(false);
+                        setLocationData(response.data.results);
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    setCall(false);
+                });
+        }
+    }, [locationData])
+
+    return {locationData, requestCallback};
 }
+
 export default useLocationRequest;

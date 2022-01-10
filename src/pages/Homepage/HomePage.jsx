@@ -49,11 +49,11 @@ const HomePage = () => {
     const options = {
         enableHighAccuracy: true,
         timeout: 5000,
-        maximumAge: 0
+        maximumAge: 1
     }
     const navigate = useNavigate();
     const success = (pos) => {
-            //TODO: Handle Network Connection
+        //TODO: Handle Network Connection
         let coordinate = pos.coords;
         console.log("Your current position is:");
         console.log(`Latitude : ${coordinate.latitude}`);
