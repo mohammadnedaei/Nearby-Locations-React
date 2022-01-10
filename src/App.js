@@ -1,7 +1,6 @@
 import './App.css';
 import Banner from "./components/Banner";
 import AppRoutes from "./routes";
-
 //TODO: StoryBook
 const App = () => {
 

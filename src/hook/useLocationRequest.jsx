@@ -4,7 +4,7 @@ import axios from "axios";
 function useLocationRequest() {
     const [locationData , setLocationData] = useState([]);
     useEffect(() => {
-        axios.get('https://api.foursquare.com/v3/places/search?ll=36%2C-119', {
+        axios.get('https://api.foursquare.com/v3/places/search?ll=36%2C-119&limit=15', {
             headers: {
                 Authorization: 'fsq3Pf7uqayKsWP6RCLPbEhnAo/WE5mbmhzJum6RNbei4nI='
             }

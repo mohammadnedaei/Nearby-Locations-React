@@ -2,7 +2,7 @@ import './tableStyles.scss';
 
 const Table = (props) => {
   return(
-      <div className="container">
+      <div className="table-container">
           <table className="responsive-table">
               <thead className="responsive-table__head">
               <tr className="responsive-table__row">

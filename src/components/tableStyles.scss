@@ -1,61 +1,46 @@
-/* Please ❤ this if you like it! 😊 */
-
-//SCSS Variables:
 $bg-color: #f2f6f9;
-$active-color: #25be64;
-$inactive-color: #dadde4;
-$new-color: #febf02;
-$text-color: #141a4e;
 $table-bg-color: #fefefe;
 $table-head-bg-color: #e1e8f2;
 $table-border-color: #edeef2;
-$hover-bg-color: #fb774f;
+$hover-bg-color: #de4a16;
 $hover-text-color: #ffffff;
 
-//Responsive Breakpoint SCSS Mixin:
-
-//xxs
 @mixin mobile-xxs {
   @media (max-width: 400px) {
     @content;
   }
 }
-//min-sm
+@mixin mobile-s {
+  @media (min-width: 400px) and (max-width: 768px) {
+    @content;
+  }
+}
 @mixin min-tablet {
   @media (min-width: 768px) {
     @content;
   }
 }
-//md
 @mixin desktop {
   @media (max-width: 991px) {
     @content;
   }
 }
-//sm to md
 @mixin tablet-to-desktop {
   @media (min-width: 768px) and (max-width: 991px) {
     @content;
   }
 }
-/* Reset Style */
-
 body {
   background-color: $bg-color;
 }
-
-/* Page Wrapper/Container Style */
-.container {
-  width: 100%;
+.table-container {
+  width: 95%;
   margin: 0 auto;
   padding: 0 15px;
 }
-
-/* Responsive Table Style */
 .responsive-table {
   background-color: $table-bg-color;
-  border-collapse: collapse;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.02);
   width: 100%;
   margin: 2rem 0;
@@ -114,13 +99,23 @@ body {
         }
       }
       @include mobile-xxs {
-        &::before {
-          width: 100%;
-          margin-bottom: 1rem;
+          &::before {
+          }
+        &--name,&--country {
+          &::before {
+            display: none;
+          }
         }
       }
-      &--name {
-        font-weight: 600;
+      &--name,&--country {
+        @include mobile-s {
+          &::before {
+            display: none;
+          }
+        }
+      }
+      &--name,
+      &--country {
         @include min-tablet {
           &::before {
             display: none;
@@ -131,9 +126,12 @@ body {
           flex-direction: column;
         }
       }
-      &--status,
+      &--name {
+        font-weight: bold;
+      }
+      &--distance,
       &--types,
-      &--update {
+      &--address {
         @include tablet-to-desktop {
           grid-column: 2/ 3;
         }
@@ -159,6 +157,7 @@ body {
   max-width: 4rem;
   height: auto;
   margin-right: 1rem;
+
 }
 .icy-avatar {
 background-color: #1ab7c5;
