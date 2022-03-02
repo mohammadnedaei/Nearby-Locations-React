@@ -2,6 +2,7 @@
   "name": "nearby-locations-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mohammadnedaei.github.io",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
@@ -26,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +51,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.1",
+    "gh-pages": "^3.2.3",
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.8"
   }
