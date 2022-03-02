@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Nearby-Locations-React/static/css/main.a216e5ac.css",
-    "main.js": "/Nearby-Locations-React/static/js/main.c0216328.js",
-    "static/js/787.63531bc7.chunk.js": "/Nearby-Locations-React/static/js/787.63531bc7.chunk.js",
-    "index.html": "/Nearby-Locations-React/index.html",
-    "main.a216e5ac.css.map": "/Nearby-Locations-React/static/css/main.a216e5ac.css.map",
-    "main.c0216328.js.map": "/Nearby-Locations-React/static/js/main.c0216328.js.map",
-    "787.63531bc7.chunk.js.map": "/Nearby-Locations-React/static/js/787.63531bc7.chunk.js.map"
+    "main.css": "/static/css/main.a216e5ac.css",
+    "main.js": "/static/js/main.c5b9423b.js",
+    "static/js/787.63531bc7.chunk.js": "/static/js/787.63531bc7.chunk.js",
+    "index.html": "/index.html",
+    "main.a216e5ac.css.map": "/static/css/main.a216e5ac.css.map",
+    "main.c5b9423b.js.map": "/static/js/main.c5b9423b.js.map",
+    "787.63531bc7.chunk.js.map": "/static/js/787.63531bc7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a216e5ac.css",
-    "static/js/main.c0216328.js"
+    "static/js/main.c5b9423b.js"
   ]
 }
