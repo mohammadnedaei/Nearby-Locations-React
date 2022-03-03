@@ -4,7 +4,7 @@ import {Alert, Button, Dialog, DialogActions, DialogContent, DialogContentText, 
 import {useNavigate} from "react-router-dom";
 var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-var iOSChrome = navigator.userAgent.match('CriOS');
+var iOSChrome = navigator.userAgent.indexOf('CriOS') >= 0;
 const HomePage = () => {
     const heroSection1ButtonText = "Explore Locations";
     const [open, setOpen] = useState(false);
