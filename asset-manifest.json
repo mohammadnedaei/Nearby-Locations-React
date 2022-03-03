@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Nearby-Locations-React/static/css/main.a216e5ac.css",
-    "main.js": "/Nearby-Locations-React/static/js/main.25d55544.js",
+    "main.js": "/Nearby-Locations-React/static/js/main.1e4f91e3.js",
     "static/js/787.63531bc7.chunk.js": "/Nearby-Locations-React/static/js/787.63531bc7.chunk.js",
     "index.html": "/Nearby-Locations-React/index.html",
     "main.a216e5ac.css.map": "/Nearby-Locations-React/static/css/main.a216e5ac.css.map",
-    "main.25d55544.js.map": "/Nearby-Locations-React/static/js/main.25d55544.js.map",
+    "main.1e4f91e3.js.map": "/Nearby-Locations-React/static/js/main.1e4f91e3.js.map",
     "787.63531bc7.chunk.js.map": "/Nearby-Locations-React/static/js/787.63531bc7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a216e5ac.css",
-    "static/js/main.25d55544.js"
+    "static/js/main.1e4f91e3.js"
   ]
 }
