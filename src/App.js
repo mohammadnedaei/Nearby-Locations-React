@@ -1,6 +1,7 @@
 import './App.css';
 import Banner from "./components/Banner";
 import AppRoutes from "./routes";
+import HomePage from "./pages/Homepage/HomePage.jsx"
 //TODO: StoryBook
 const App = () => {
 

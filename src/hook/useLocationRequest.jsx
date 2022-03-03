@@ -14,7 +14,7 @@ function useLocationRequest(pos) {
         if (call) {
             axios.get('https://api.foursquare.com/v3/places/search?' + geoCode + '&limit=15', {
                 headers: {
-                    Authorization: 'fsq3zB/MV9WboPJuSB+jU32nB3ZuHHWzxTS59ObA8ZlYEzU=',
+                    Authorization: 'fsq3450KUYbLF7rdOpFn3lmqe0i+Vp+5vtCJQtQ0ztb8pUk=',
                     'Access-Control-Allow-Origin': '*'
                 }
             })

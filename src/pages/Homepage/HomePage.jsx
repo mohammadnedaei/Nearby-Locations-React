@@ -2,7 +2,9 @@ import HeroSection1 from "./components/HeroSection1";
 import {useState} from "react";
 import {Alert, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from "@mui/material";
 import {useNavigate} from "react-router-dom";
-
+var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
+var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+var iOSChrome = navigator.userAgent.match('CriOS');
 const HomePage = () => {
     const heroSection1ButtonText = "Explore Locations";
     const [open, setOpen] = useState(false);
@@ -23,6 +25,13 @@ const HomePage = () => {
         setDialog(false);
         if (navigator.geolocation) {
             console.log("Device has Geolocation Availability");
+            //TODO: Add IOS Navigator
+            if (isSafari || iOS || iOSChrome) {
+              navigator.geolocation.getCurrentPosition(success, errors, options);
+            }
+            if( navigator.userAgent.includes ('wv')){
+              navigator.geolocation.getCurrentPosition(success, errors, options);
+              }
             navigator.permissions.query({name: "geolocation"}).then((result) => {
                 if (result.state === "granted") {
                     console.log(result.state);
