@@ -21,6 +21,7 @@ function useLocationRequest(pos) {
             })
                 .then(function (response) {
                     if (response.status === 200) {
+                      console.log(response);
                         setCall(false);
                         setLocationData(response.data.results);
                     }
