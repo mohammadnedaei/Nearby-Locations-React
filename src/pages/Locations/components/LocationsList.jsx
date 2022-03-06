@@ -7,7 +7,7 @@ const LocationsList = () => {
     const {requestCallback, locationData} = useLocationRequest()
     navigator.geolocation.getCurrentPosition((pos) => {
         console.log(pos);
-        requestCallback(pos)
+        requestCallback(pos);
     }, (e) => {
         console.log(e);
     }, {

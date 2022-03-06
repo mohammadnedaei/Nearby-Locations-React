@@ -1,18 +1,36 @@
-import useLocationDetails from "../../hook/useLocationDetails";
 import LocationItem from "./components/LocationItem";
+import {useEffect} from "react";
 import {useLocation} from "react-router-dom";
-const LocationDetails = (props) => {
-  const {state} = useLocation();
-const { locationName } = state;
-  // const params = useParams();
-  // let { locationName } = useParams();
-  console.log(locationName)
-  // const { state } = props.location
+import useLocationPhotos from "../../hook/useLocationPhotos";
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.scss';
+const LocationDetails = () => {
+    const {state} = useLocation();
+    const { locationName, locationId } = state;
+    console.log(locationId)
+    console.log("=======================")
+    const {requestCallback, locationPhotos} = useLocationPhotos()
+    requestCallback(locationId);
+    useEffect(() => {
+        console.log(locationPhotos);
+    }, [locationPhotos])
+console.log("location Photos:" + locationPhotos)
+
 return (
   <div>
-  <h1>
-   1
-  </h1>
+ <Swiper
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        onSwiper={(swiper) => (window.swiper = swiper)}
+        slidesPerView={3}
+        spaceBetween={50}
+        navigation
+        loop
+        scrollbar={{ draggable: true }}
+        pagination={{ clickable: true }}
+      >
+        {locationPhotos.map(pics => (<SwiperSlide><img alt = "hi" src={pics.prefix + "original" + pics.suffix}/></SwiperSlide>))}
+      </Swiper>
   </div>
 )
 }

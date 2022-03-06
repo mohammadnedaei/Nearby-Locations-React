@@ -2,16 +2,16 @@ import {Avatar} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 import LocationDetails from "../LocationDetails";
 import {useState} from "react";
-import useLocationDetails from "../../../hook/useLocationDetails";
 const LocationItem = (props) => {
     const avatarBackgrounds = ['purple-avatar', 'red-avatar', 'blue-avatar', 'pink-avatar', 'yellow-avatar', 'green-avatar', 'icy-avatar']
-    const {name, location, categories, geocodes, distance} = props ?? {};
+    const {name, location, categories, geocodes, distance, fsq_id} = props ?? {};
     const navigate = useNavigate();
     return (
         <tr onClick={() => {
             console.log(name);
             navigate("/locationDetails", {
               state: {
+                locationId : fsq_id,        
                 locationName: name,
               }
             });
