@@ -9,6 +9,7 @@ function useLocationPhotos(id) {
         if (call) {
             axios.get('https://api.foursquare.com/v3/places/' + id + '/photos', {
                 headers: {
+                  //TODO: rating api (details)
                   //TODO: Add env for both cors (add localhost on fsq)
                     Authorization: 'fsq3450KUYbLF7rdOpFn3lmqe0i+Vp+5vtCJQtQ0ztb8pUk=',
                     'Access-Control-Allow-Origin': '*'
