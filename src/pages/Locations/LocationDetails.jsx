@@ -7,10 +7,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Gradient from 'rgt'
 import 'swiper/swiper.scss';
 import './locationDetailsStyles.scss';
-function getWindowWidth () {
-    const { innerWidth: width} = window
-    return width
-}
 const LocationDetails = () => {
     const randomNumber = Math.floor(Math.random() * 11);
     const gradientColors = [
@@ -27,19 +23,15 @@ const LocationDetails = () => {
         '#6441A5',
         '#2a0845'
     ]
-    const [windowWidth , setWindowWidth] = useState(getWindowWidth())
-    useEffect(() => {
-        const handleResize = () => setWindowWidth(getWindowWidth())
-        window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize)
-    }, [])
     const {state} = useLocation();
     const { location, locationName, locationId } = state;
     const {requestCallback, locationPhotos} = useLocationPhotos()
-    useEffect(() => {
-        requestCallback(locationId);
-    }, [])
-
+        useEffect(() => {
+            if (locationPhotos != null) {
+                requestCallback(locationId);
+            }
+        }, [])
+console.log(randomNumber)
 const samplePhotos = [
     'https://via.placeholder.com/1080x701',
 ]
