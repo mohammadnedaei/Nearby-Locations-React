@@ -47,7 +47,7 @@ export default function Banner(props) {
                                 type="button"
                                 className="-mr-1 flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2"
                             >
-                                <span className="sr-only">dismiss</span>
+                                <span className="sr-only">Dismiss</span>
                                 <XIcon className="h-6 w-6 text-white" aria-hidden="true"/>
                             </button>
                         </div>

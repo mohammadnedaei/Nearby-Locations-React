@@ -11,7 +11,8 @@ const LocationItem = (props) => {
             console.log(name);
             navigate("/locationDetails", {
               state: {
-                locationId : fsq_id,        
+                location: location,
+                locationId : fsq_id,
                 locationName: name,
               }
             });

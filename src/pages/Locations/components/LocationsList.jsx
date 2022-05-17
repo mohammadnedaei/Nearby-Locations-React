@@ -5,19 +5,19 @@ import {useEffect} from "react";
 
 const LocationsList = () => {
     const {requestCallback, locationData} = useLocationRequest()
-    navigator.geolocation.getCurrentPosition((pos) => {
-        console.log(pos);
-        requestCallback(pos);
-    }, (e) => {
-        console.log(e);
-    }, {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0
-    })
+
     useEffect(() => {
-        console.log(locationData);
-    }, [locationData])
+        navigator.geolocation.getCurrentPosition((pos) => {
+            console.log(pos);
+            requestCallback(pos);
+        }, (e) => {
+            console.log(e);
+        }, {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        })
+    }, [])
     return (
         <Table
             tableRow={locationData.map(data => (
