@@ -5,8 +5,7 @@ const useLocationPhotos = () => {
     const [locationPhotos, setlocationPhotos] = useState(null);
     const requestCallback = useCallback((id) => {
         console.log(id)
-            fetch('https://api.foursquare.com/v3/places/' + id + '/photos', {
-                method: "GET",
+            axios.get('https://api.foursquare.com/v3/places/' + id + '/photos', {
                 headers: {
                     //TODO: rating api (details)
                     //TODO: Add env for both cors (add localhost on fsq)
@@ -16,7 +15,7 @@ const useLocationPhotos = () => {
             })
                 .then(function (response) {
                     if (response.status === 200) {
-                        console.log("photos:" + response);
+                        console.log("photos:" + response.data);
                         setlocationPhotos(response.data);
                     }
                 })
