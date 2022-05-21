@@ -5,6 +5,12 @@
 .location-title {
 
 }
+.w-85 {
+  width: 85%;
+}
+.h-650 {
+  height: 650px;
+}
 .rounded {
   border-radius: 10px;
 }
@@ -43,6 +49,9 @@
   justify-content: center;
 }
 @media (max-width: 1280px) {
+  .lg-h-450 {
+    height: 450px;
+  }
   .lg-end-rounded {
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
