@@ -24,3 +24,31 @@ code {
     border-radius: 10px;
     background: #c0c2c5;
 }
+.back-to-top {
+    display: inline-block;
+    background: linear-gradient(to left, #3d0149, #030236);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 7px;
+    position: fixed;
+    bottom: 80px;
+    right: 25px;
+    transition: all 1.3s;
+    visibility: visible;
+    z-index: 300000;
+    color: #FFF;
+    font-size: 30px;
+}
+.back-to-top:hover {
+    cursor: pointer;
+}
+.fade-out{
+    opacity:0;
+    transition: all 1.3s;
+
+}
+.fade-in {
+    opacity: 1;
+    transition: all 1.3s;
+}

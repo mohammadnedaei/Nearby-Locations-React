@@ -23,6 +23,7 @@ import {
 import {List} from "@mui/icons-material";
 import {ViewGridIcon} from "@heroicons/react/solid";
 import {XIcon} from "@heroicons/react/outline";
+import ScrollToTop from "../../components/ScrollToTop";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -164,7 +165,7 @@ return (
         <div>
             <div style={{display:'flex', justifyContent:'center'}}>
                 <div className="w-4_10 lg-w-1_2 md-w-1 mr-5">
-                    <img onClick={handleGalleryOpen} className="mt-10 start-rounded md-end-rounded" alt = "1080x900" src={locationPhotos[0].prefix + "1080x900" + locationPhotos[0].suffix}/>
+                    <img onClick={handleGalleryOpen} width={1080} height={900} className="mt-10 start-rounded md-end-rounded" alt = "1080x900" src={locationPhotos[0].prefix + "1080x900" + locationPhotos[0].suffix}/>
                     <Button style={{position:'relative', bottom:'10%',left:'1%', backgroundColor:'#fff', color:'#000', textTransform: 'none'}}
                             variant="contained"  startIcon={<ViewGridIcon className="h-6 w-6" aria-hidden="true" />} onClick={handleGalleryOpen}>
                         Show all photos
@@ -182,29 +183,34 @@ return (
                 </div>
             </div>
         </div> : null}
+          {
+          //TODO: Add slider for higher screens
+          }
+          <div>
+              <Dialog
+                  fullScreen
+                  open={gallery}
+                  onClose={handleGalleryClose}
+                  TransitionComponent={Transition}
+              >
+                  <AppBar sx={{ position: 'relative' }}>
+                      <Toolbar>
+                          <Button autoFocus color="inherit" onClick={handleGalleryClose}>
+                              <XIcon className="h-6 w-6 text-white" aria-hidden="true"/>
+                          </Button>
+                          <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
+                              {locationName}
+                          </Typography>
+                      </Toolbar>
+                  </AppBar>
+                  <div>
+                      {locationPhotos.map(data => (
+                          <img style={{margin:'auto', marginTop: 15, padding: 10, borderRadius:20}} alt = "1080x900" src={data.prefix + "1080x900" + data.suffix}/>
+                      ))}
+                  </div>
+              </Dialog>
+          </div>
       </div>}
-      <Dialog
-          fullScreen
-          open={gallery}
-          onClose={handleGalleryClose}
-          TransitionComponent={Transition}
-      >
-          <AppBar sx={{ position: 'relative' }}>
-              <Toolbar>
-                  <Button autoFocus color="inherit" onClick={handleGalleryClose}>
-                      <XIcon className="h-6 w-6 text-white" aria-hidden="true"/>
-                  </Button>
-                  <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-                      {locationName}
-                  </Typography>
-              </Toolbar>
-          </AppBar>
-          <List>
-              <ListItem button>
-                  <ListItemText primary="Phone ringtone" secondary="Titania" />
-              </ListItem>
-          </List>
-      </Dialog>
   </div>
 )
 }
