@@ -1,13 +1,14 @@
 import * as React from 'react';
-import LocationItem from "./components/LocationItem";
+import LocationItem from "../components/LocationItem";
 import {useEffect, useMemo, useState} from "react";
 import {useLocation} from "react-router-dom";
-import useLocationPhotos from "../../hook/useLocationPhotos";
+import useLocationPhotos from "../../../hook/useLocationPhotos";
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Gradient from 'rgt'
 import 'swiper/swiper.scss';
 import './locationDetailsStyles.scss';
+import textGradients from "../../../configs/textGradients";
 import {
     AppBar,
     Button,
@@ -23,46 +24,27 @@ import {
 import {List} from "@mui/icons-material";
 import {ViewGridIcon} from "@heroicons/react/solid";
 import {XIcon} from "@heroicons/react/outline";
-import ScrollToTop from "../../components/ScrollToTop";
-
+import ScrollToTop from "../../../components/ScrollToTop";
+import LocationTitle from "./components/LocationTitle";
+const placeholderImages = [
+    'https://via.placeholder.com/1080x900.png?text=Loading...',
+    'https://via.placeholder.com/1080x700.png?text=No image is provided for this location :('
+]
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 const LocationDetails = () => {
-
-    const randomNumber = useMemo(() => {
-        return Math.floor(Math.random() * 11);
-    },[])
     //TODO: properly skeleton for photos grid !important
-    const gradientColors = useMemo(() => {
-        return ['#004d4b',
-            '#007CF0',
-            '#00008b',
-            '#9932cc',
-            '#057e7c',
-            '#620372',
-            '#2cbdf7',
-            '#5d0dac',
-            '#010864',
-            '#004e92',
-            '#6441A5',
-            '#42106e']
-    }, [])
-    const sampleImage = [
-        'https://via.placeholder.com/1080x900.png?text=Loading...',
-        'https://via.placeholder.com/1080x700.png?text=No image is provided for this location :('
-    ]
-
     const {state} = useLocation();
     const { location, locationName, locationId } = state;
+    const locationRegion = location.region ? location.region + "," : ''
+    const locationCountry = location.country ?? ''
     const {requestCallback, locationPhotos} = useLocationPhotos()
         useEffect(() => {
             if (locationPhotos == null) {
                 requestCallback(locationId);
             }
         },[locationPhotos])
-console.log(randomNumber)
-    console.log(locationPhotos)
     const [gallery, setGallery] = useState(false)
     const handleGalleryOpen = () => {
         setGallery(true)
@@ -72,57 +54,29 @@ console.log(randomNumber)
     }
 return (
   <div style={{display:'flex', alignItems:'center', flexDirection:'column'}} className="page">
-      <div style={{display:'flex' , flexDirection:'row'}}>
-          <div>
-            <h1 style={{marginTop: 25, marginBottom: 5}} className="location-title text-2xl font font-extrabold tracking-tight text-gray-900">
-                {randomNumber % 2 == 0 ?
-                    <Gradient dir="left-to-right" from={gradientColors[randomNumber]} to={gradientColors[randomNumber+1]}>
-                        {locationName}
-                    </Gradient>
-                    :
-                    <Gradient dir="left-to-right" from={gradientColors[randomNumber]} to={gradientColors[randomNumber-1]}>
-                        {locationName}
-                    </Gradient>
-                }
-
-            </h1>
-              <span>
-                  {randomNumber % 2 == 0 ?
-                      <Gradient dir="right-to-left" from={gradientColors[randomNumber]} to={gradientColors[randomNumber+1]}>
-                          {location.region + "," ?? ''} {location.country ?? ''}
-                      </Gradient>
-                      :
-                      <Gradient dir="right-to-left" from={gradientColors[randomNumber]} to={gradientColors[randomNumber-1]}>
-                          {location.region + "," ?? ''} {location.country ?? ''}
-                      </Gradient>
-                  }
-              </span>
-
-          </div>
-      </div>
+      <LocationTitle title={locationName} description={} />
       {locationPhotos == null ?
-          <div>
-              <div style={{display:'flex', justifyContent:'center'}}>
+          <div style={{display:'flex', justifyContent:'center'}}>
                   <div className="w-4_10 lg-w-1_2 md-w-1 mr-5">
-                      <img className="mt-10 start-rounded md-end-rounded" alt = "1080x900" src={sampleImage[0]}/>
+                      <img className="mt-10 start-rounded md-end-rounded" alt = "1080x900"
+                           src={placeholderImages[0]} />
                   </div>
                   <div className="alternative-photos lg-w-1_2 w-4_10 md-visible">
                       <div className="w-1_2 lg-w-1 flex">
-                          <img className="mt-10 mr-5 lg-end-rounded" alt = "1080x900" src={sampleImage[0]} />
-                          <img className="lg-visible mt-10 top-end-rounded" alt = "1080x900" src={sampleImage[0]} />
+                          <img className="mt-10 mr-5 lg-end-rounded" alt = "1080x900" src={placeholderImages[0]} />
+                          <img className="lg-visible mt-10 top-end-rounded" alt = "1080x900" src={placeholderImages[0]} />
                       </div>
                       <div className="lg-visible w-1_2 flex">
-                          <img style={{marginRight: '20px'}} className="mt-10" alt = "1080x900" src={sampleImage[0]} />
-                          <img className="mt-10 bottom-end-rounded" alt = "1080x900" src={sampleImage[0]} />
+                          <img style={{marginRight: '20px'}} className="mt-10" alt = "1080x900" src={placeholderImages[0]} />
+                          <img className="mt-10 bottom-end-rounded" alt = "1080x900" src={placeholderImages[0]} />
                       </div>
                   </div>
-              </div>
           </div>
           :
       <div>
           {locationPhotos.length === 0 ?
               <div>
-                  <img className="mt-10 rounded" alt ="1080x700" src={sampleImage[1]}/>
+                  <img className="mt-10 rounded" alt ="1080x700" src={placeholderImages[1]}/>
               </div>
               : null }
           {locationPhotos.length === 1 ?

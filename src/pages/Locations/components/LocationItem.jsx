@@ -1,6 +1,6 @@
 import {Avatar} from "@mui/material";
 import {useNavigate} from "react-router-dom";
-import LocationDetails from "../LocationDetails";
+import LocationDetails from "../LocationDetails/LocationDetails";
 import {useState} from "react";
 const LocationItem = (props) => {
     const avatarBackgrounds = ['purple-avatar', 'red-avatar', 'blue-avatar', 'pink-avatar', 'yellow-avatar', 'green-avatar', 'icy-avatar']

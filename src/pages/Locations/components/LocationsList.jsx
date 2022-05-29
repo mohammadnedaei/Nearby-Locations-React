@@ -8,7 +8,6 @@ const LocationsList = () => {
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition((pos) => {
-            console.log(pos);
             requestCallback(pos);
         }, (e) => {
             console.log(e);
