@@ -37,7 +37,7 @@ const LocationDetails = () => {
     //TODO: properly skeleton for photos grid !important
     const {state} = useLocation();
     const { location, locationName, locationId } = state;
-    const locationRegion = location.region ? location.region + "," : ''
+    const locationRegion = location.region ? location.region + ", " : ''
     const locationCountry = location.country ?? ''
     const {requestCallback, locationPhotos} = useLocationPhotos()
         useEffect(() => {
@@ -45,7 +45,17 @@ const LocationDetails = () => {
                 requestCallback(locationId);
             }
         },[locationPhotos])
+    let x = 0
+    let photos = []
+    if (locationPhotos != null) {
+        while (x < locationPhotos.length) {
+            photos.push(locationPhotos[0].prefix + "1080x700" + locationPhotos[0].suffix)
+            x++
+        }
+    }
+    console.log(photos)
     const [gallery, setGallery] = useState(false)
+    const [loaded , setLoaded] = useState(false)
     const handleGalleryOpen = () => {
         setGallery(true)
     }
@@ -54,7 +64,7 @@ const LocationDetails = () => {
     }
 return (
   <div style={{display:'flex', alignItems:'center', flexDirection:'column'}} className="page">
-      <LocationTitle title={locationName} description={} />
+      <LocationTitle title={locationName} description={locationRegion + locationCountry} />
       {locationPhotos == null ?
           <div style={{display:'flex', justifyContent:'center'}}>
                   <div className="w-4_10 lg-w-1_2 md-w-1 mr-5">
@@ -115,15 +125,34 @@ return (
                   </div>
               </div>
               : null }
-        {locationPhotos.length >= 5 ?
+        {photos.length >= 5 ?
         <div>
             <div style={{display:'flex', justifyContent:'center'}}>
                 <div className="w-4_10 lg-w-1_2 md-w-1 mr-5">
-                    <img onClick={handleGalleryOpen} width={1080} height={900} className="mt-10 start-rounded md-end-rounded" alt = "1080x900" src={locationPhotos[0].prefix + "1080x900" + locationPhotos[0].suffix}/>
-                    <Button style={{position:'relative', bottom:'10%',left:'1%', backgroundColor:'#fff', color:'#000', textTransform: 'none'}}
-                            variant="contained"  startIcon={<ViewGridIcon className="h-6 w-6" aria-hidden="true" />} onClick={handleGalleryOpen}>
-                        Show all photos
-                    </Button>
+                    {loaded ? null :
+                            <Skeleton show vanimation="wave" variant="rectangular" style={{width:'100%', height:'100%'}}/>
+                    }
+                        <div style={loaded ? {} : {display: 'none'}}>
+                            <img
+                                onClick={handleGalleryOpen} width={1080} height={900}
+                                 className="mt-10 start-rounded md-end-rounded" alt="1080x900"
+                                 src={photos[0]}
+                                 onLoad={() => setLoaded(true)}
+                            />
+                            <Button style={{
+                                position: 'relative',
+                                bottom: '10%',
+                                left: '1%',
+                                backgroundColor: '#fff',
+                                color: '#000',
+                                textTransform: 'none'
+                            }}
+                                    variant="contained"
+                                    startIcon={<ViewGridIcon className="h-6 w-6" aria-hidden="true"/>}
+                                    onClick={handleGalleryOpen}>
+                                Show all photos
+                            </Button>
+                        </div>
                 </div>
                 <div className="alternative-photos lg-w-1_2 w-4_10 md-visible">
                     <div className="w-1_2 lg-w-1 flex">
