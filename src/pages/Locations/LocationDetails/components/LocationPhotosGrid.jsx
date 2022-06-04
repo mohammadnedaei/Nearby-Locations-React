@@ -46,11 +46,6 @@ const LocationPhotosGrid = (props) => {
                 </div>
                 :
                 <div>
-                    {props.photos.length === 0 ?
-                        <div>
-                            <img className="mt-10 rounded" alt="1080x700" src={placeholderImages[1]}/>
-                        </div>
-                        : null}
                     {props.photos.length === 1 ?
                         <div>
                             <img width={1080} height={700} className="mt-10 rounded" alt="1080x700"

@@ -41,21 +41,20 @@ const LocationDetails = () => {
             requestCallback(locationId);
         }
     }, [locationPhotos])
+    const [photos, setPhotos] = useState(null)
     let x = 0
-    const [photos, setPhotos] = useState([])
+
     useEffect(() => {
         if (locationPhotos != null) {
-            console.log("hi")
+            setPhotos([])
             while (x < locationPhotos.length) {
-                setPhotos(arr => [...arr, ...["1", "2"]])
+                let y = locationPhotos[x].prefix + "1080x900" + locationPhotos[x].suffix
+                setPhotos(arr => [...arr, y])
                 // photos.set(locationPhotos[0].prefix + "1080x900" + locationPhotos[0].suffix)
                 x++
             }
         }
     }, [locationPhotos, setPhotos, x])
-    useEffect(() => {
-        console.log(photos)
-    }, [photos])
     return (
         <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}} className="page">
             <LocationTitle title={locationName} description={locationRegion + locationCountry}/>
