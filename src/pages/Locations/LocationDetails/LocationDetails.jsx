@@ -1,30 +1,8 @@
-import * as React from 'react';
-import LocationItem from "../components/LocationItem";
-import {useEffect, useMemo, useState} from "react";
+import {useEffect, useState} from 'react';
 import {useLocation} from "react-router-dom";
 import useLocationPhotos from "../../../hook/useLocationPhotos";
-import {Navigation, Pagination, Scrollbar, A11y} from 'swiper';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import Gradient from 'rgt'
 import 'swiper/swiper.scss';
 import './locationDetailsStyles.scss';
-import textGradients from "../../../configs/textGradients";
-import {
-    AppBar,
-    Button,
-    Dialog, Divider,
-    IconButton,
-    ListItem,
-    ListItemText,
-    Skeleton,
-    Slide,
-    Toolbar,
-    Typography
-} from "@mui/material";
-import {List} from "@mui/icons-material";
-import {ViewGridIcon} from "@heroicons/react/solid";
-import {XIcon} from "@heroicons/react/outline";
-import ScrollToTop from "../../../components/ScrollToTop";
 import LocationTitle from "./components/LocationTitle";
 import LocationPhotosGrid from "./components/LocationPhotosGrid";
 
@@ -62,7 +40,6 @@ const LocationDetails = () => {
             {
                 //TODO: Add slider for higher screens
             }
-
         </div>
     )
 }

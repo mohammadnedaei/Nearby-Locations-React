@@ -169,7 +169,7 @@ const LocationPhotosGrid = (props) => {
                         <div>
                             {props.photos.map(data => (
                                 <img style={{margin: 'auto', marginTop: 15, padding: 10, borderRadius: 20}}
-                                     alt="1080x900" src={props.photos}/>
+                                     alt="1080x900" src={data}/>
                             ))}
                         </div>
                     </Dialog>
