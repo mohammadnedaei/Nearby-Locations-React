@@ -1,6 +1,6 @@
 {
   "name": "nearby-locations-react",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "homepage": "https://mohammadnedaei.github.io/Nearby-Locations-React/",
   "dependencies": {
@@ -25,7 +25,6 @@
     "react-scripts": "5.0.0",
     "rgt": "^1.0.7",
     "sass": "^1.47.0",
-    "swiper": "^6.8.4",
     "web-vitals": "^2.1.2"
   },
   "scripts": {
