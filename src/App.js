@@ -4,6 +4,10 @@ import AppRoutes from "./routes";
 import HomePage from "./pages/Homepage/HomePage.jsx"
 import ScrollToTop from "./components/ScrollToTop";
 //TODO: StoryBook
+// TODO: Add install button in settings for PWA desktop
+// TODO: Service Worker for push notifications
+// TODO: Service Worker for Cache
+// TODO: Service Worker for fetch
 const App = () => {
 
     return (
