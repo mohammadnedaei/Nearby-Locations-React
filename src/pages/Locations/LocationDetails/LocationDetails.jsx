@@ -1,7 +1,6 @@
 import {useEffect, useState} from 'react';
 import {useLocation} from "react-router-dom";
 import useLocationPhotos from "../../../hook/useLocationPhotos";
-import 'swiper/swiper.scss';
 import './locationDetailsStyles.scss';
 import LocationTitle from "./components/LocationTitle";
 import LocationPhotosGrid from "./components/LocationPhotosGrid";
