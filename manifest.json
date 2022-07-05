@@ -6,7 +6,7 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "description": "Find nearby locations easily",
-  "theme_color":"#ffffff",
+  "theme_color":"#ff7f00",
   "lang": "en-US",
   "dir": "ltr",
   "categories": ["travel","entertainment", "food", "lifestyle", "photo"],
