@@ -14,11 +14,12 @@ export default function Banner(props) {
     if (window.localStorage.getItem('seen_banner')) {
         return <></>
     }
-        return (show ?
-            <div style={{zIndex: 99, ...props.bannerStyle, ...bannerPlace}} className={`bg-indigo-600 ${props.bannerBackground}`}>
-                <div className="max-w-7xl mx-auto py-5 px-5 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between flex-wrap">
-                        <div className="w-0 flex-1 flex items-center">
+    return (show ?
+        <div style={{...props.bannerStyle, ...bannerPlace}}
+             className="bg-indigo-600">
+            <div className="max-w-7xl mx-auto py-5 px-5 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between flex-wrap">
+                    <div className="w-0 flex-1 flex items-center">
             <span className="flex p-2 rounded-lg bg-indigo-800">
               <SpeakerphoneIcon className="h-7 w-7 text-white" aria-hidden="true"/>
             </span>
