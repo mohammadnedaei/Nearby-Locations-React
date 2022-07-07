@@ -1,9 +1,7 @@
-import './App.css';
 import Banner from "./components/Banner";
 import AppRoutes from "./routes";
-import HomePage from "./pages/Homepage/HomePage.jsx"
 import ScrollToTop from "./components/ScrollToTop";
-//TODO: StoryBook
+// TODO: StoryBook
 // TODO: Add install button in settings for PWA desktop
 // TODO: Service Worker for push notifications
 // TODO: Service Worker for Cache
@@ -17,10 +15,10 @@ const App = () => {
                 bannerDescription={"Introducing Android version of app."}
                 bannerButtonText={"Learn more"}
                 bannerPlace={"top"}
-                bannerButtonUrl={"https://gitlab.com"}
+                bannerButtonUrl={"https://github.com"}
             />
-            <AppRoutes />
-            <ScrollToTop />
+            <AppRoutes/>
+            <ScrollToTop/>
         </div>
     );
 }
