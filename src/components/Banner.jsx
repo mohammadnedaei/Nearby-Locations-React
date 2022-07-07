@@ -57,3 +57,14 @@ export default function Banner(props) {
             : null);
 
 }
+Banner.defaultProps = {
+    bannerTitle: '',
+    bannerDescription: '',
+    bannerStyle: '',
+    bannerPlace: 'top',
+    bannerButtonText: '',
+    bannerButtonClass: '',
+    bannerButtonUrl: 'javascript:void(0)',
+    bannerButtonOnClick: null,
+    bannerButtonStyle: {}
+}
