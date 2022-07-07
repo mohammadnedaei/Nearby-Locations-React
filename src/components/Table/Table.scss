@@ -2,8 +2,8 @@ $bg-color: #f2f6f9;
 $table-bg-color: #fefefe;
 $table-head-bg-color: #e1e8f2;
 $table-border-color: #edeef2;
-$hover-bg-color: #de4a16;
-$hover-text-color: #ffffff;
+$hover-bg-color: #eae1db;
+$hover-text-color: #000000;
 
 @mixin mobile-xxs {
   @media (max-width: 400px) {
@@ -40,7 +40,7 @@ body {
 }
 
 .table-container {
-  width: 95%;
+  width: 99%;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -145,7 +145,6 @@ body {
           flex-direction: column;
         }
       }
-
 
 
       &-distance,

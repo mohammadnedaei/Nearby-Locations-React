@@ -1,4 +1,4 @@
-import './tableStyles.scss';
+import './Table.scss';
 
 const Table = (props) => {
     return (
