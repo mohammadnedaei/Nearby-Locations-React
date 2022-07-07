@@ -37,7 +37,7 @@ export default function Banner(props) {
                             onClick={props.bannerButtonOnClick}
                             href={props.bannerButtonUrl}
                             style={props.bannerButtonStyle}
-                            className={`flex items-center justify-center py-2 px-3 border border-transparent rounded-md shadow-sm text-md font-medium text-indigo-600 bg-white hover:bg-indigo-50 ${props.bannerButtonClass}`}
+                            className={`flex items-center justify-center py-2 px-3 border border-transparent banner-button rounded-md text-md font-medium text-indigo-600 bg-white hover:bg-indigo-50 ${props.bannerButtonClass}`}
                         >
                             {props.bannerButtonText}
                         </a>
