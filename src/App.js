@@ -1,6 +1,6 @@
-import Banner from "./components/Banner";
+import Banner from "./components/Banner/Banner";
 import AppRoutes from "./routes";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 // TODO: StoryBook
 // TODO: Add install button in settings for PWA desktop
 // TODO: Service Worker for push notifications

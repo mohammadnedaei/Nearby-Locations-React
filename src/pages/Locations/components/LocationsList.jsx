@@ -1,5 +1,5 @@
 import LocationItem from "./LocationItem";
-import Table from "../../../components/Table";
+import Table from "../../../components/Table/Table";
 import useLocationRequest from "../../../hook/useLocationRequest";
 import {useEffect} from "react";
 
