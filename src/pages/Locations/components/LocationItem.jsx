@@ -1,7 +1,6 @@
 import {Avatar} from "@mui/material";
 import {useNavigate} from "react-router-dom";
-import LocationDetails from "../LocationDetails/LocationDetails";
-import {useState} from "react";
+
 const LocationItem = (props) => {
     const avatarBackgrounds = ['purple-avatar', 'red-avatar', 'blue-avatar', 'pink-avatar', 'yellow-avatar', 'green-avatar', 'icy-avatar']
     const {name, location, categories, geocodes, distance, fsq_id} = props ?? {};
@@ -10,11 +9,11 @@ const LocationItem = (props) => {
         <tr onClick={() => {
             console.log(name);
             navigate("/locationDetails", {
-              state: {
-                location: location,
-                locationId : fsq_id,
-                locationName: name,
-              }
+                state: {
+                    location: location,
+                    locationId: fsq_id,
+                    locationName: name,
+                }
             });
         }} className="table-row">
             <td className="table-body-text table-body-text-name">
