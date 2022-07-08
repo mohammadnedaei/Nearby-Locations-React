@@ -1,5 +1,4 @@
-
-const textGradients = () => {
+const TextGradientColors = () => {
     return ['#004d4b',
         '#007CF0',
         '#00008b',
@@ -13,4 +12,4 @@ const textGradients = () => {
         '#6441A5',
         '#42106e']
 }
-export default textGradients()
+export default TextGradientColors()
