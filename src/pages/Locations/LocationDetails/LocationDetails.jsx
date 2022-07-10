@@ -17,7 +17,7 @@ const LocationDetails = () => {
         if (locationPhotos == null) {
             requestCallback(locationId);
         }
-    }, [locationPhotos])
+    }, [locationId, locationPhotos, requestCallback])
     const [photos, setPhotos] = useState(null)
     let x = 0
 
