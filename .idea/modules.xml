@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://E:/Documents/.idea/Documents.iml" filepath="E:/Documents/.idea/Documents.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/nearby-locations-react.iml" filepath="$PROJECT_DIR$/.idea/nearby-locations-react.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../Samples/oms.crew.mobile/.idea/oms.crew.mobile.iml" filepath="$PROJECT_DIR$/../../Samples/oms.crew.mobile/.idea/oms.crew.mobile.iml" />
     </modules>
   </component>
 </project>
