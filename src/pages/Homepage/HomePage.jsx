@@ -1,13 +1,16 @@
-import HeroSection1 from "./components/HeroSection1";
+import Hero from "./components/Hero";
 import {useState} from "react";
 import {Alert, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from "@mui/material";
 import {useNavigate} from "react-router-dom";
-var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
+
+var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) {
+    return p.toString() === "[object SafariRemoteNotification]";
+})(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 var iOSChrome = navigator.userAgent.indexOf('CriOS') >= 0;
 // TODO: Fix Chrome and other browsers geolocation bug.
 const HomePage = () => {
-    const heroSection1ButtonText = "Explore Locations";
+    const HeroButtonText = "Explore Locations";
     const [open, setOpen] = useState(false);
     const [dialog, setDialog] = useState(true);
     const [teach, setTeacher] = useState(false);
@@ -21,18 +24,18 @@ const HomePage = () => {
     }
     //TODO: useCallback()
     const handleLocationAvailability = () => {
-        HeroSection1.heroSection1ButtonOnClick = {handleLocationAvailability}
+        Hero.HeroButtonOnClick = {handleLocationAvailability}
         setOpen(false);
         setDialog(false);
         if (navigator.geolocation) {
             console.log("Device has Geolocation Availability");
             //TODO: Add IOS Navigator
             if (isSafari || iOS || iOSChrome) {
-              navigator.geolocation.getCurrentPosition(success, errors, options);
+                navigator.geolocation.getCurrentPosition(success, errors, options);
             }
-            if( navigator.userAgent.includes ('wv')){
-              navigator.geolocation.getCurrentPosition(success, errors, options);
-              }
+            if (navigator.userAgent.includes('wv')) {
+                navigator.geolocation.getCurrentPosition(success, errors, options);
+            }
             navigator.permissions.query({name: "geolocation"}).then((result) => {
                 if (result.state === "granted") {
                     console.log(result.state);
@@ -76,12 +79,12 @@ const HomePage = () => {
     }
     return (
         <div>
-            <HeroSection1
-                heroSection1Title={"Find nearby locations easily"}
-                heroSection1Description={"A public service to explore your current nearby locations as fast as possible." +
-                " Even more, find your nearby locations details."}
-                heroSection1ButtonText={heroSection1ButtonText}
-                heroSection1ButtonOnClick={dialog ? handleDialogOpen : handleLocationAvailability}
+            <Hero
+                heroTitle={"Find nearby locations easily"}
+                heroDescription={"A public service to explore your current nearby locations as fast as possible." +
+                    " Even more, find your nearby locations details."}
+                HeroButtonText={HeroButtonText}
+                HeroButtonOnClick={dialog ? handleDialogOpen : handleLocationAvailability}
             />
             {dialog ?
                 <Dialog
@@ -118,7 +121,7 @@ const HomePage = () => {
             {grant ? <Alert style={{position: 'fixed', bottom: 0}} severity="success">Location permission granted
                 successfully!</Alert> : null}
             {prompt ? <Alert style={{position: 'fixed', bottom: 0}} severity="info">Grant permission and then click
-                on {heroSection1ButtonText}. Waiting for permission pass...</Alert> : null}
+                on {HeroButtonText}. Waiting for permission pass...</Alert> : null}
         </div>
     )
 }
