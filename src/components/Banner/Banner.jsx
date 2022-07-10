@@ -11,7 +11,7 @@ export default function Banner(props) {
             position: 'fixed',
             width: '100%'
         } : {}
-    }, [])
+    }, [props.bannerPlace])
     if (window.localStorage.getItem('seen_banner')) {
         return <></>
     }
@@ -34,6 +34,7 @@ export default function Banner(props) {
                     <div className="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
                         <a
                             target="_blank"
+                            rel="noreferrer"
                             onClick={props.bannerButtonOnClick}
                             href={props.bannerButtonUrl}
                             style={props.bannerButtonStyle}
@@ -68,7 +69,7 @@ Banner.defaultProps = {
     bannerPlace: 'top',
     bannerButtonText: '',
     bannerButtonClass: '',
-    bannerButtonUrl: 'javascript:void(0)',
+    bannerButtonUrl: '#',
     bannerButtonOnClick: null,
     bannerButtonStyle: {}
 }
