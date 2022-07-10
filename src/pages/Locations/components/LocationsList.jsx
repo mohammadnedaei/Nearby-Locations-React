@@ -16,7 +16,7 @@ const LocationsList = () => {
             timeout: 5000,
             maximumAge: 0
         })
-    }, [])
+    })
     return (
         <Table
             tableRow={locationData.map(data => (
