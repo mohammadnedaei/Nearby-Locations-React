@@ -1,8 +1,7 @@
 import * as React from "react";
-import LocationTitle from "./LocationTitle";
+import {useState} from "react";
 import {AppBar, Button, Dialog, Skeleton, Slide, Toolbar, Typography} from "@mui/material";
 import {ViewGridIcon} from "@heroicons/react/solid";
-import {useState} from "react";
 import {XIcon} from "@heroicons/react/outline";
 import '../locationDetailsStyles.scss';
 
