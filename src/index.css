@@ -33,6 +33,30 @@ p, td {
     font-weight: 400;
 }
 
+.default-font {
+    font-family: 'Poppins', 'sans-serif' !important;
+}
+
+.font-300 {
+    font-weight: 300 !important;
+}
+
+.font-400 {
+    font-weight: 400 !important;
+}
+
+.font-500 {
+    font-weight: 500 !important;
+}
+
+.font-600 {
+    font-weight: 600 !important;
+}
+
+.font-700 {
+    font-weight: 700 !important;
+}
+
 span,
 a,
 button,
