@@ -13,7 +13,7 @@ const App = () => {
             <Banner
                 bannerTitle={"Big news!"}
                 bannerDescription={"Introducing Android version of app."}
-                bannerButtonText={"Learn more"}
+                bannerButtonText={"Install app"}
                 bannerPlace={"top"}
                 bannerButtonUrl={"https://github.com"}
             />
