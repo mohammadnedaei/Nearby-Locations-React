@@ -8,7 +8,6 @@ import iOS from "../../configs/agents/iOS";
 import Safari from "../../configs/agents/Safari";
 // TODO: Fix Chrome and other browsers geolocation bug.
 const HomePage = () => {
-    const HeroButtonText = "Explore Locations";
     const [open, setOpen] = useState(false);
     const [dialog, setDialog] = useState(true);
     const [teach, setTeacher] = useState(false);
@@ -80,7 +79,7 @@ const HomePage = () => {
                 heroTitle={"Find nearby locations easily"}
                 heroDescription={"A public service to explore your current nearby locations as fast as possible." +
                     " Even more, find your nearby locations details."}
-                HeroButtonText={HeroButtonText}
+                HeroButtonText={"Explore Locations"}
                 HeroButtonOnClick={dialog ? handleDialogOpen : handleLocationAvailability}
             />
             {dialog ?
