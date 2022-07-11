@@ -1,13 +1,11 @@
-import Hero from "./components/Hero";
 import {useState} from "react";
 import {Alert, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from "@mui/material";
 import {useNavigate} from "react-router-dom";
-
-var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) {
-    return p.toString() === "[object SafariRemoteNotification]";
-})(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
-var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-var iOSChrome = navigator.userAgent.indexOf('CriOS') >= 0;
+import './HomePage.css';
+import Hero from "./components/Hero";
+import iOSChrome from "../../configs/agents/iOSChrome";
+import iOS from "../../configs/agents/iOS";
+import Safari from "../../configs/agents/Safari";
 // TODO: Fix Chrome and other browsers geolocation bug.
 const HomePage = () => {
     const HeroButtonText = "Explore Locations";
@@ -29,8 +27,7 @@ const HomePage = () => {
         setDialog(false);
         if (navigator.geolocation) {
             console.log("Device has Geolocation Availability");
-            //TODO: Add IOS Navigator
-            if (isSafari || iOS || iOSChrome) {
+            if (Safari || iOS || iOSChrome) {
                 navigator.geolocation.getCurrentPosition(success, errors, options);
             }
             if (navigator.userAgent.includes('wv')) {
