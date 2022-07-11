@@ -1,7 +1,7 @@
 import {Button, Skeleton} from "@mui/material";
 import {useCallback, useState} from "react";
+import './Hero.css';
 
-const IMAGE_URL = "http://placeimg.com/224/320/arch"
 const HeroImages = {
     img1: "https://picsum.photos/id/520/224/320",
     title1: "Location 1",
@@ -32,11 +32,11 @@ const Hero = (props) => {
         setRecord({...record, [title]: true})
     }, [record])
     return (
-        <div className="relative overflow-hidden" style={{height: '923px'}}>
+        <div className="hero-wrapper relative overflow-hidden">
             <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
                     <div className="sm:max-w-lg mt-20">
-                        <h1 className="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl">
+                        <h1 className="text-4xl font tracking-tight text-gray-900 sm:text-6xl">
                             {props.heroTitle}
                         </h1>
                         <p className="mt-8 text-2xl text-gray-500">
@@ -56,8 +56,8 @@ const Hero = (props) => {
                                             <div
                                                 className="w-56 h-80 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100">
                                                 {record.title1 ? null : (
-                                                    <Skeleton animation="wave" variant="rectangular"
-                                                              style={{height: '100%'}}/>
+                                                    <Skeleton animation="wave"
+                                                              variant="rectangular" style={{height: '100%'}}/>
                                                 )}
                                                 <img
                                                     style={record.title1 ? {} : {display: 'none'}}
