@@ -108,16 +108,21 @@ const HomePage = () => {
             }
             {(navigator.geolocation) ? null
                 :
-                <Alert style={{position: 'fixed', bottom: 0}} severity="error">Sorry, Your device does not support find
-                    location!</Alert>
+                <Alert className="default-font font-400 alert" severity="error">Sorry,
+                    Your device does not support <em>location services!</em></Alert>
             }
             {teach ?
-                <Alert style={{position: 'fixed', bottom: 0}} severity="warning">Location permission denied by user.
+                <Alert className="default-font font-400 alert" severity="warning">Location
+                    permission denied by user.
                     Open site settings and approve permission to continue.</Alert> : null}
-            {grant ? <Alert style={{position: 'fixed', bottom: 0}} severity="success">Location permission granted
-                successfully!</Alert> : null}
-            {prompt ? <Alert style={{position: 'fixed', bottom: 0}} severity="info">Grant permission and then click
-                on {HeroButtonText}. Waiting for permission pass...</Alert> : null}
+            {grant ? <Alert className="default-font font-400 alert" severity="success">Location
+                permission granted
+                successfully! Finding places...</Alert> : null}
+            {prompt ?
+                <Alert className="default-font font-400 alert" severity="info">Grant
+                    permission and then
+                    click
+                    on <em>Explore Locations</em>. Waiting for permission pass...</Alert> : null}
         </div>
     )
 }
