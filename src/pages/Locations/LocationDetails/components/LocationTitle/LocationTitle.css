@@ -1,0 +1,10 @@
+.title-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.location-title {
+    margin-top: 25px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
