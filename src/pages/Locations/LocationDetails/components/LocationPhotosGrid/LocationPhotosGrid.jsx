@@ -3,8 +3,7 @@ import {useState} from "react";
 import {AppBar, Button, Dialog, Skeleton, Slide, Toolbar, Typography} from "@mui/material";
 import {ViewGridIcon} from "@heroicons/react/solid";
 import {XIcon} from "@heroicons/react/outline";
-import '../locationDetailsStyles.scss';
-
+import './LocationPhotosGrid.css'
 
 const placeholderImages = [
     'https://via.placeholder.com/1080x900.png?text=Loading...',
@@ -22,6 +21,7 @@ const LocationPhotosGrid = (props) => {
     const handleGalleryClose = () => {
         setGallery(false)
     }
+
     return (
         <div>
             {props.photos == null ?
@@ -168,7 +168,7 @@ const LocationPhotosGrid = (props) => {
                         <div>
                             {props.photos.map(data => (
                                 <img style={{margin: 'auto', marginTop: 15, padding: 10, borderRadius: 20}}
-                                     alt="1080x900" src={data}/>
+                                     alt="1080x900" src={data} key={data}/>
                             ))}
                         </div>
                     </Dialog>

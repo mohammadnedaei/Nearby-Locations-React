@@ -17,10 +17,11 @@ const LocationsList = () => {
             maximumAge: 0
         })
     })
+    //TODO: Add Loader for locations list
     return (
         <Table
             tableRow={locationData.map(data => (
-                <LocationItem {...data} />
+                <LocationItem {...data} key={data.fsq_id}/>
             ))}
         />
     )
