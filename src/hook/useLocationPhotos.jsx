@@ -4,7 +4,7 @@ import axios from "axios";
 const useLocationPhotos = () => {
     const [locationPhotos, setLocationPhotos] = useState(null);
     const requestCallback = useCallback((id) => {
-        axios.get(process.env.REACT_APP_FSQ_PLACES_URL + id + '/photos', {
+        axios.get(process.env.REACT_APP_FSQ_PHOTOS_URL + id + '/photos', {
             headers: {
                 //TODO: rating api (details)
                 Authorization: process.env.REACT_APP_FSQ_KEY,
