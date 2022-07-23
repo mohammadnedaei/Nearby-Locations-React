@@ -6,7 +6,7 @@ import Hero from "./components/Hero";
 import iOSChrome from "../../configs/agents/iOSChrome";
 import iOS from "../../configs/agents/iOS";
 import Safari from "../../configs/agents/Safari";
-// TODO: Fix Chrome and other browsers geolocation bug.
+// TODO: Fix Chrome and Opera geolocation bug.
 const HomePage = () => {
     const [open, setOpen] = useState(false);
     const [dialog, setDialog] = useState(true);
@@ -25,7 +25,6 @@ const HomePage = () => {
         setOpen(false);
         setDialog(false);
         if (navigator.geolocation) {
-            console.log("Device has Geolocation Availability");
             if (Safari || iOS || iOSChrome) {
                 navigator.geolocation.getCurrentPosition(success, errors, options);
             }
@@ -34,20 +33,17 @@ const HomePage = () => {
             }
             navigator.permissions.query({name: "geolocation"}).then((result) => {
                 if (result.state === "granted") {
-                    console.log(result.state);
                     navigator.geolocation.getCurrentPosition(success);
                     setTeacher(false);
                     setGranted(true);
                     setPrompt(false);
                 } else if (result.state === "prompt") {
-                    console.log(result.state);
                     navigator.geolocation.getCurrentPosition(success, errors, options);
                     setGranted(false);
                     setTeacher(false);
                     setPrompt(true);
                 } else if (result.state === "denied") {
                     setDialog(true);
-                    console.log(result.state);
                     setGranted(false);
                     setTeacher(true);
                     setPrompt(false);
@@ -64,10 +60,6 @@ const HomePage = () => {
     const success = (pos) => {
         //TODO: Handle Network Connection
         let coordinate = pos.coords;
-        console.log("Your current position is:");
-        console.log(`Latitude : ${coordinate.latitude}`);
-        console.log(`Longitude: ${coordinate.longitude}`);
-        console.log(`More or less ${coordinate.accuracy} meters.`);
         navigate("/locations");
     }
     const errors = (error) => {
