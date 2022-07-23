@@ -29,19 +29,19 @@ const LocationPhotosGrid = (props) => {
             {props.photos == null ?
                 <div style={{display: 'flex', justifyContent: 'center'}}>
                     <div className="w-4_10 lg-w-1_2 md-w-1 mr-5">
-                        <img className="mt-10 start-rounded md-end-rounded" alt="location-image"
+                        <img className="mt-10 start-rounded md-end-rounded" alt="location"
                              src={placeholderImages[0]}/>
                     </div>
                     <div className="alternative-photos lg-w-1_2 w-4_10 md-visible">
                         <div className="w-1_2 lg-w-1 flex">
-                            <img className="mt-10 mr-5 lg-end-rounded" alt="location-image" src={placeholderImages[0]}/>
-                            <img className="lg-visible mt-10 top-end-rounded" alt="location-image"
+                            <img className="mt-10 mr-5 lg-end-rounded" alt="location" src={placeholderImages[0]}/>
+                            <img className="lg-visible mt-10 top-end-rounded" alt="location"
                                  src={placeholderImages[0]}/>
                         </div>
                         <div className="lg-visible w-1_2 flex">
-                            <img style={{marginRight: '20px'}} className="mt-10" alt="location-image"
+                            <img style={{marginRight: '20px'}} className="mt-10" alt="location"
                                  src={placeholderImages[0]}/>
-                            <img className="mt-10 bottom-end-rounded" alt="location-image" src={placeholderImages[0]}/>
+                            <img className="mt-10 bottom-end-rounded" alt="location" src={placeholderImages[0]}/>
                         </div>
                     </div>
                 </div>
@@ -57,10 +57,10 @@ const LocationPhotosGrid = (props) => {
                         <div>
                             <div style={{display: 'flex', justifyContent: 'center'}}>
                                 <img width={1080} height={900} className="mt-10 main-photo w-4_10 mr-5 start-rounded"
-                                     alt="location-image"
+                                     alt="location"
                                      src={props.photos[0]}/>
                                 <img width={1080} height={900} style={{width: "40%"}}
-                                     className="mt-10 lg-visible end-rounded" alt="location-image"
+                                     className="mt-10 lg-visible end-rounded" alt="location"
                                      src={props.photos[1]}/>
                             </div>
                         </div>
@@ -69,15 +69,15 @@ const LocationPhotosGrid = (props) => {
                         <div style={{display: 'flex', justifyContent: 'center'}}>
                             <div className="w-6_10 lg-w-1_2 md-w-1 mr-5">
                                 <img width={1080} height={600} className="mt-10 start-rounded md-end-rounded"
-                                     alt="location-image"
+                                     alt="location"
                                      src={props.photos[0]}/>
                             </div>
                             <div className="alternative-photos lg-w-1_2 w-3_10 md-visible">
                                 <img width={1080} height={600} className="mt-10 lg-visible top-end-rounded"
-                                     alt="location-image"
+                                     alt="location"
                                      src={props.photos[1]}/>
                                 <img width={1080} height={600} className="mt-10 bottom-end-rounded lg-top-end-rounded"
-                                     alt="location-image"
+                                     alt="location"
                                      src={props.photos[2]}/>
                             </div>
                         </div>
@@ -86,17 +86,17 @@ const LocationPhotosGrid = (props) => {
                         <div style={{display: 'flex', justifyContent: 'center'}}>
                             <div className="w-6_10 lg-w-1_2 md-w-1 mr-5">
                                 <img width={1080} height={700} className="mt-10 start-rounded md-end-rounded"
-                                     alt="location-image"
+                                     alt="location"
                                      src={props.photos[0]}/>
                             </div>
                             <div className="alternative-photos lg-w-1_2 w-1_6 md-visible">
                                 <img width={1080} height={700} className="mt-10 lg-visible top-end-rounded"
-                                     alt="location-image"
+                                     alt="location"
                                      src={props.photos[1]}/>
-                                <img width={1080} height={700} className="mt-10 lg-visible" alt="location-image"
+                                <img width={1080} height={700} className="mt-10 lg-visible" alt="location"
                                      src={props.photos[2]}/>
                                 <img width={1080} height={700} className="mt-10 bottom-end-rounded lg-top-end-rounded"
-                                     alt="location-image"
+                                     alt="location"
                                      src={props.photos[3]}/>
                             </div>
                         </div>
@@ -112,7 +112,7 @@ const LocationPhotosGrid = (props) => {
                                     <div style={loaded ? {} : {display: 'none'}}>
                                         <img
                                             onClick={handleGalleryOpen} width={1080} height={900}
-                                            className="mt-10 start-rounded md-end-rounded" alt="location-image"
+                                            className="mt-10 start-rounded md-end-rounded" alt="location"
                                             src={props.photos[0]}
                                             onLoad={() => setLoaded(true)}
                                         />
@@ -134,18 +134,18 @@ const LocationPhotosGrid = (props) => {
                                 <div className="alternative-photos lg-w-1_2 w-4_10 md-visible">
                                     <div className="w-1_2 lg-w-1 flex">
                                         <img width={1080} height={900} className="mt-10 mr-5 lg-end-rounded"
-                                             alt="location-image"
+                                             alt="location"
                                              src={props.photos[1]}/>
                                         <img width={1080} height={900} className="lg-visible mt-10 top-end-rounded"
-                                             alt="location-image"
+                                             alt="location"
                                              src={props.photos[2]}/>
                                     </div>
                                     <div className="lg-visible w-1_2 flex">
                                         <img width={1080} height={900} style={{marginRight: '20px'}} className="mt-10"
-                                             alt="location-image"
+                                             alt="location"
                                              src={props.photos[3]}/>
                                         <img width={1080} height={900} className="mt-10 bottom-end-rounded"
-                                             alt="location-image"
+                                             alt="location"
                                              src={props.photos[4]}/>
                                     </div>
                                 </div>
@@ -185,7 +185,7 @@ const LocationPhotosGrid = (props) => {
                         <div className="all-photos-sm-wrapper">
                             {props.photos.map(data => (
                                 <img className="all-photos-sm"
-                                     alt="location-image" src={data} key={data}/>
+                                     alt="location" src={data} key={data}/>
                             ))}
                         </div>
                     </Dialog>
