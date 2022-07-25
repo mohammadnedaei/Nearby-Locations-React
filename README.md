@@ -14,15 +14,15 @@ your nearby locations details. Created with `React` with awesome `components`.
 
 ### Desktop view:
 
-![alt text](https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-homepage.webp)
-![alt text](https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-locations.webp)
-![alt text](https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-details.webp)
+<a target="_blank" href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-homepage.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-homepage.webp"></a>
+<a target="_blank" href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-locations.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-locations.webp"></a>
+<a target="_blank" href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-details.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-details.webp"></a>
 
 ### Mobile view:
 
-![alt text](https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-homepage.webp)
-![alt text](https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-locations.webp)
-![alt text](https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-details.webp)
+| Homepage                                                                                                                                                                                                                                    | Locations                                                                                                                                                                                                                                    | Details                                                                                                                                                                                     |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <a target="_blank" href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-homepage.webp"><img src="public/screenshots/sm-homepage.webp"></a> | <a target="_blank" href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-locations.webp"><img src="public/screenshots/sm-locations.webp"></a> | <a target="_blank" href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-details.webp"><img src="public/screenshots/sm-details.webp"></a>
 
 ## 🚀 Usage
 
