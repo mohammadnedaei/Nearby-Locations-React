@@ -1,25 +1,86 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Nearby Locations",
+  "short_name": "Nearby Locations",
+  "start_url": ".",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Find nearby locations easily",
+  "theme_color": "#ff7f00",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": [
+    "travel",
+    "entertainment",
+    "food",
+    "lifestyle",
+    "photo"
+  ],
+  "orientation": "any",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "screenshots": [
+    {
+      "src": "screenshots/lg-homepage.webp",
+      "sizes": "1920x930",
+      "type": "image/webp",
+      "platform": "wide",
+      "label": "Homescreen of Nearby Locations in desktop view"
+    },
+    {
+      "src": "screenshots/lg-locations.webp",
+      "sizes": "1920x930",
+      "type": "image/webp",
+      "platform": "wide",
+      "label": "List of Locations in desktop view"
+    },
+    {
+      "src": "screenshots/lg-details.webp",
+      "sizes": "1920x930",
+      "type": "image/webp",
+      "platform": "wide",
+      "label": "Location details in desktop view"
+    },
+    {
+      "src": "screenshots/sm-homepage.webp",
+      "sizes": "1920x930",
+      "type": "image/webp",
+      "platform": "wide",
+      "label": "Homescreen of Nearby Locations in mobile view"
+    },
+    {
+      "src": "screenshots/sm-locations.webp",
+      "sizes": "1920x930",
+      "type": "image/webp",
+      "platform": "wide",
+      "label": "List of Locations in mobile view"
+    },
+    {
+      "src": "screenshots/sm-details.webp",
+      "sizes": "1920x930",
+      "type": "image/webp",
+      "platform": "wide",
+      "label": "Location details in mobile view"
+    }
+  ]
 }

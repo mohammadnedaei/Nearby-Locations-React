@@ -1,6 +1,6 @@
 {
   "name": "nearby-locations-react",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "homepage": "https://mohammadnedaei.github.io/Nearby-Locations-React/",
   "dependencies": {
@@ -18,13 +18,14 @@
     "api": "^4.2.0",
     "axios": "^0.24.0",
     "cors": "^2.8.5",
+    "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-routerm-dom": "^6.2.1",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "rgt": "^1.0.7",
     "sass": "^1.47.0",
-    "swiper": "^6.8.4",
     "web-vitals": "^2.1.2"
   },
   "scripts": {

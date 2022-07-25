@@ -1,0 +1,144 @@
+.w-85 {
+    width: 85%;
+}
+
+.h-650 {
+    height: 650px;
+}
+
+.rounded {
+    border-radius: 10px;
+}
+
+.start-rounded {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.end-rounded {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.top-end-rounded {
+    border-top-right-radius: 10px;
+}
+
+.bottom-end-rounded {
+    border-bottom-right-radius: 10px;
+}
+
+.w-1_2 {
+    width: 45%;
+}
+
+.w-4_10 {
+    width: 40%;
+}
+
+.w-6_10 {
+    width: 60%;
+}
+
+.w-3_10 {
+    width: 28%;
+}
+
+.w-1_6 {
+    width: 15%;
+}
+
+.alternative-photos {
+    display: flex;
+    margin-top: 5px;
+    flex-direction: column;
+}
+
+@media (max-width: 1280px) {
+    .lg-h-450 {
+        height: 450px;
+    }
+
+    .alternative-photos {
+        margin-top: 0;
+    }
+
+    .lg-end-rounded {
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .lg-top-end-rounded {
+        border-top-right-radius: 10px;
+    }
+
+    .lg-visible {
+        display: none;
+    }
+
+    .main-photo {
+        margin: 0;
+        margin-top: 20px;
+        width: 80%;
+    }
+
+    .lg-w-1 {
+        margin: 0;
+        width: 100%;
+    }
+
+    .lg-w-1_2 {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .md-end-rounded {
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .md-visible {
+        display: none;
+    }
+
+    .md-w-1 {
+        margin: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .main-photo {
+        margin: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+.all-photos-sm {
+    margin: auto;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.all-photos-lg-wrapper {
+    width: 60%;
+    margin: auto;
+    margin-top: 25px;
+    display: none;
+}
+
+.carousel-image {
+    border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+    .all-photos-sm-wrapper {
+        display: none;
+    }
+
+    .all-photos-lg-wrapper {
+        display: inline-block;
+    }
+}

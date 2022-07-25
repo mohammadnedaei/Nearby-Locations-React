@@ -1,13 +1,13 @@
-import HeroSection1 from "./components/HeroSection1";
 import {useState} from "react";
 import {Alert, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from "@mui/material";
 import {useNavigate} from "react-router-dom";
-var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
-var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-var iOSChrome = navigator.userAgent.indexOf('CriOS') >= 0;
-// TODO: Fix Chrome and other browsers geolocation bug.
+import './HomePage.css';
+import Hero from "./components/Hero";
+import iOSChrome from "../../configs/agents/iOSChrome";
+import iOS from "../../configs/agents/iOS";
+import Safari from "../../configs/agents/Safari";
+
 const HomePage = () => {
-    const heroSection1ButtonText = "Explore Locations";
     const [open, setOpen] = useState(false);
     const [dialog, setDialog] = useState(true);
     const [teach, setTeacher] = useState(false);
@@ -19,36 +19,30 @@ const HomePage = () => {
     const handleDialogClose = () => {
         setOpen(false);
     }
-    //TODO: useCallback()
     const handleLocationAvailability = () => {
-        HeroSection1.heroSection1ButtonOnClick = {handleLocationAvailability}
+        Hero.HeroButtonOnClick = {handleLocationAvailability}
         setOpen(false);
         setDialog(false);
         if (navigator.geolocation) {
-            console.log("Device has Geolocation Availability");
-            //TODO: Add IOS Navigator
-            if (isSafari || iOS || iOSChrome) {
-              navigator.geolocation.getCurrentPosition(success, errors, options);
+            if (Safari || iOS || iOSChrome) {
+                navigator.geolocation.getCurrentPosition(success, errors, options);
             }
-            if( navigator.userAgent.includes ('wv')){
-              navigator.geolocation.getCurrentPosition(success, errors, options);
-              }
+            if (navigator.userAgent.includes('wv')) {
+                navigator.geolocation.getCurrentPosition(success, errors, options);
+            }
             navigator.permissions.query({name: "geolocation"}).then((result) => {
                 if (result.state === "granted") {
-                    console.log(result.state);
                     navigator.geolocation.getCurrentPosition(success);
                     setTeacher(false);
                     setGranted(true);
                     setPrompt(false);
                 } else if (result.state === "prompt") {
-                    console.log(result.state);
                     navigator.geolocation.getCurrentPosition(success, errors, options);
                     setGranted(false);
                     setTeacher(false);
                     setPrompt(true);
                 } else if (result.state === "denied") {
                     setDialog(true);
-                    console.log(result.state);
                     setGranted(false);
                     setTeacher(true);
                     setPrompt(false);
@@ -63,12 +57,7 @@ const HomePage = () => {
     }
     const navigate = useNavigate();
     const success = (pos) => {
-        //TODO: Handle Network Connection
         let coordinate = pos.coords;
-        console.log("Your current position is:");
-        console.log(`Latitude : ${coordinate.latitude}`);
-        console.log(`Longitude: ${coordinate.longitude}`);
-        console.log(`More or less ${coordinate.accuracy} meters.`);
         navigate("/locations");
     }
     const errors = (error) => {
@@ -76,12 +65,12 @@ const HomePage = () => {
     }
     return (
         <div>
-            <HeroSection1
-                heroSection1Title={"Find nearby locations easily"}
-                heroSection1Description={"A public service to explore your current nearby locations as fast as possible." +
-                " Even more, find your nearby locations details."}
-                heroSection1ButtonText={heroSection1ButtonText}
-                heroSection1ButtonOnClick={dialog ? handleDialogOpen : handleLocationAvailability}
+            <Hero
+                heroTitle={"Find nearby locations easily"}
+                heroDescription={"A public service to explore your current nearby locations as fast as possible." +
+                    " Even more, find your nearby locations details."}
+                HeroButtonText={"Explore Locations"}
+                HeroButtonOnClick={dialog ? handleDialogOpen : handleLocationAvailability}
             />
             {dialog ?
                 <Dialog
@@ -109,16 +98,21 @@ const HomePage = () => {
             }
             {(navigator.geolocation) ? null
                 :
-                <Alert style={{position: 'fixed', bottom: 0}} severity="error">Sorry, Your device does not support find
-                    location!</Alert>
+                <Alert className="default-font font-400 alert" severity="error">Sorry,
+                    Your device does not support <em>location services!</em></Alert>
             }
             {teach ?
-                <Alert style={{position: 'fixed', bottom: 0}} severity="warning">Location permission denied by user.
+                <Alert className="default-font font-400 alert" severity="warning">Location
+                    permission denied by user.
                     Open site settings and approve permission to continue.</Alert> : null}
-            {grant ? <Alert style={{position: 'fixed', bottom: 0}} severity="success">Location permission granted
-                successfully!</Alert> : null}
-            {prompt ? <Alert style={{position: 'fixed', bottom: 0}} severity="info">Grant permission and then click
-                on {heroSection1ButtonText}. Waiting for permission pass...</Alert> : null}
+            {grant ? <Alert className="default-font font-400 alert" severity="success">Location
+                permission granted
+                successfully! Finding places...</Alert> : null}
+            {prompt ?
+                <Alert className="default-font font-400 alert" severity="info">Grant
+                    permission and then
+                    click
+                    on <em>Explore Locations</em>. Waiting for permission pass...</Alert> : null}
         </div>
     )
 }

@@ -1,0 +1,12 @@
+.banner-wrapper {
+    z-index: 3;
+}
+
+.banner-button {
+    transition: box-shadow .3s;
+
+}
+
+.banner-button:hover {
+    box-shadow: 0 5px rgba(33, 33, 33, .2);
+}

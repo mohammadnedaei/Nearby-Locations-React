@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# 🗺️ &middot; [Nearby Locations React](https://mohammadnedaei.github.io/Nearby-Locations-React/) &middot;
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/mohammadnedaei/Nearby-Locations-React/blob/main/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/mohammadnedaei/Nearby-Locations-React/fork)
+[![codebeat badge](https://img.shields.io/badge/Codebeat-3.83-brightgreen)](https://codebeat.co/projects/github-com-mohammadnedaei-nearby-locations-react-main)
+[![CodeFactor](https://www.codefactor.io/repository/github/mohammadnedaei/nearby-locations-react/badge)](https://www.codefactor.io/repository/github/mohammadnedaei/nearby-locations-react)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7463c364240e4fe9b7fcfeafb3ac4047)](https://www.codacy.com/gh/mohammadnedaei/Nearby-Locations-React/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mohammadnedaei/Nearby-Locations-React&amp;utm_campaign=Badge_Grade)
+[![Lighthouse Badge](https://img.shields.io/badge/Lighthouse-A-brightgreen)](#)
+[![GTMetrix Badge](https://img.shields.io/badge/GTMetrix-A-brightgreen)](https://gtmetrix.com/reports/mohammadnedaei.github.io/O2ybS3Z2/)
 
-## Available Scripts
+## 🔎 Overview
 
-In the project directory, you can run:
+`Nearby Locations` is a public service to explore your current nearby places as fast as possible. Even more, find
+your nearby locations details. Created with `React` with awesome `components`.
 
-### `npm start`
+### This app looks like this:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Screenshots may change in the future because of UI/UX changes.
 
-The page will reload when you make changes.\
+### 🖥️ Desktop view:
+
+<a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-homepage.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-homepage.webp"></a>
+
+<a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-locations.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-locations.webp"></a>
+
+<a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-details.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-details.webp"></a>
+
+### 📱 Mobile view:
+
+| Homepage                                                                                                                                                                                                                                    | Locations                                                                                                                                                                                                                                    | Details                                                                                                                                                                                     |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-homepage.webp"><img src="public/screenshots/sm-homepage.webp"></a> | <a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-locations.webp"><img src="public/screenshots/sm-locations.webp"></a> | <a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-details.webp"><img src="public/screenshots/sm-details.webp"></a>
+
+## 🚀 Usage
+
+Run this commands in **respectively** in your terminal.
+
+```shell
+ git clone https://github.com/mohammadnedaei/Nearby-Locations-React.git
+```
+
+```shell
+ cd Nearby-Locations-React
+```
+
+```shell
+ npm i
+```
+
+Change `.env` properties depending in your information and then go to the next step.
+
+```shell
+ npm start
+```
+
+`npm start` Runs the app in the development mode.
+Open http://localhost:3000 to view it in your browser.
+The page will reload when you make changes.
 You may also see any lint errors in the console.
 
-### `npm test`
+### 🧰 Libraries and Tools
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+✅ Responsive Design & Mobile Friendly \
+✅ PWA (5/7) \
+✅ Lighthouse
 
-### `npm run build`
+- Performance (%99)
+- Lighthouse Accessibility (%100)
+- Lighthouse Best Practices (%92)
+- Lighthouse SEO (%100)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+✅ Heroicons \
+✅ Tailwind UI \
+✅ Material UI
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Material icons
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+✅ Axios \
+✅ React Router \
+✅ React Hooks \
+✅ jQuery \
+✅ React Responsive Carousel \
+✅ React Gradient Text (rgt) \
+✅ Github Pages \
+✅ Foursquare API
 
-### `npm run eject`
+### 🔧 Contributing
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Feel free to fork this repo and make pull requests.
+You can learn more about `React` [here](https://reactjs.org/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 🎯 TODO
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+🚧 Code factor & code quality tools improvements \
+🔃 Add Shortcuts in manifest \
+🚧 Include rating API (use in locations page and details) \
+🚧 Fix desktop Chrome and Opera geolocation bug \
+🚧 Add a Loader for locations list \
+🔃 StoryBook \
+🔃 Add install button in settings for PWA desktop \
+🔃 Service Worker for push notifications \
+🔃 Service Worker for Cache \
+🔃 Service Worker for fetch
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 💚 Support
 
-## Learn More
+<a href="https://sociabuzz.com/mohammadnedaei/donate" target="_blank"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" height="32px" alt="Sociabuzz"></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### ✍🏻 Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+     Mohammad Nedaei
 
-### Code Splitting
+### 📞 Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    Discord: Mohammad81#3277
 
-### Analyzing the Bundle Size
+[Linkedin](https://www.linkedin.com/in/mohammad-nedaei-47789b1a6/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### ©️ License
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`Nearby Locations` is [MIT licensed](./LICENSE).

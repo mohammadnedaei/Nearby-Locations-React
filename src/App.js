@@ -1,8 +1,7 @@
-import './App.css';
-import Banner from "./components/Banner";
+import Banner from "./components/Banner/Banner";
 import AppRoutes from "./routes";
-import HomePage from "./pages/Homepage/HomePage.jsx"
-//TODO: StoryBook
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+
 const App = () => {
 
     return (
@@ -10,11 +9,12 @@ const App = () => {
             <Banner
                 bannerTitle={"Big news!"}
                 bannerDescription={"Introducing Android version of app."}
-                bannerButtonText={"Learn more"}
+                bannerButtonText={"Install app"}
                 bannerPlace={"top"}
-                bannerButtonUrl={"https://gitlab.com"}
+                bannerButtonUrl={"https://github.com"}
             />
-            <AppRoutes />
+            <AppRoutes/>
+            <ScrollToTop/>
         </div>
     );
 }
