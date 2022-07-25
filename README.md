@@ -14,19 +14,31 @@ your nearby locations details. Created with `React` with awesome `components`.
 
 ### Desktop view:
 
-[//]: # (![alt text]&#40;https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/homepage.webp&#41;)
+![alt text](https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-homepage.webp)
+![alt text](https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-locations.webp)
+![alt text](https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-details.webp)
 
-[//]: # (![alt text]&#40;https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/locations.webp&#41;)
+### Mobile view:
+
+![alt text](https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-homepage.webp)
+![alt text](https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-locations.webp)
+![alt text](https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-details.webp)
 
 ## 🚀 Usage
 
 ```
  git clone https://github.com/mohammadnedaei/Nearby-Locations-React.git
+```
 
+```
  cd Nearby-Locations-React
+```
 
+```
  npm i
+```
 
+```
  npm start
 ```
 
