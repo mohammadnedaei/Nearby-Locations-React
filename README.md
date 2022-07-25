@@ -20,7 +20,9 @@ your nearby locations details. Created with `React` with awesome `components`.
 ### 🖥️ Desktop view:
 
 <a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-homepage.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-homepage.webp"></a>
+
 <a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-locations.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-locations.webp"></a>
+
 <a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-details.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-details.webp"></a>
 
 ### 📱 Mobile view:
