@@ -3,7 +3,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/mohammadnedaei/Nearby-Locations-React/blob/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/mohammadnedaei/Nearby-Locations-React/fork)
 
-## Overview
+## 🔎 Overview
 
 `Nearby Locations` is a public service to explore your current nearby places as fast as possible. Even more, find
 your nearby locations details. Created with `React` with awesome `components`.
@@ -14,31 +14,31 @@ your nearby locations details. Created with `React` with awesome `components`.
 
 ### Desktop view:
 
-<a target="_blank" href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-homepage.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-homepage.webp"></a>
-<a target="_blank" href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-locations.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-locations.webp"></a>
-<a target="_blank" href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-details.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-details.webp"></a>
+<a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-homepage.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-homepage.webp"></a>
+<a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-locations.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-locations.webp"></a>
+<a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/lg-details.webp"><img style="border-radius: 10px; margin-top: 10px;" src="public/screenshots/lg-details.webp"></a>
 
 ### Mobile view:
 
 | Homepage                                                                                                                                                                                                                                    | Locations                                                                                                                                                                                                                                    | Details                                                                                                                                                                                     |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <a target="_blank" href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-homepage.webp"><img src="public/screenshots/sm-homepage.webp"></a> | <a target="_blank" href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-locations.webp"><img src="public/screenshots/sm-locations.webp"></a> | <a target="_blank" href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-details.webp"><img src="public/screenshots/sm-details.webp"></a>
+| <a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-homepage.webp"><img src="public/screenshots/sm-homepage.webp"></a> | <a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-locations.webp"><img src="public/screenshots/sm-locations.webp"></a> | <a href="https://raw.githubusercontent.com/mohammadnedaei/Nearby-Locations-React/dev/public/screenshots/sm-details.webp"><img src="public/screenshots/sm-details.webp"></a>
 
 ## 🚀 Usage
 
-```
+```shell
  git clone https://github.com/mohammadnedaei/Nearby-Locations-React.git
 ```
 
-```
+```shell
  cd Nearby-Locations-React
 ```
 
-```
+```shell
  npm i
 ```
 
-```
+```shell
  npm start
 ```
 
