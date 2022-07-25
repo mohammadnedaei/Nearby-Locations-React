@@ -6,7 +6,7 @@ import Hero from "./components/Hero";
 import iOSChrome from "../../configs/agents/iOSChrome";
 import iOS from "../../configs/agents/iOS";
 import Safari from "../../configs/agents/Safari";
-// TODO: Fix Chrome and Opera geolocation bug.
+
 const HomePage = () => {
     const [open, setOpen] = useState(false);
     const [dialog, setDialog] = useState(true);
@@ -19,7 +19,6 @@ const HomePage = () => {
     const handleDialogClose = () => {
         setOpen(false);
     }
-    //TODO: useCallback()
     const handleLocationAvailability = () => {
         Hero.HeroButtonOnClick = {handleLocationAvailability}
         setOpen(false);
@@ -58,7 +57,6 @@ const HomePage = () => {
     }
     const navigate = useNavigate();
     const success = (pos) => {
-        //TODO: Handle Network Connection
         let coordinate = pos.coords;
         navigate("/locations");
     }

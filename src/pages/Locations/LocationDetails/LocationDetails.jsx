@@ -7,8 +7,6 @@ import LocationPhotosGrid from "./components/LocationPhotosGrid/LocationPhotosGr
 
 
 const LocationDetails = () => {
-    //TODO: Add slider for higher screens
-    //TODO: properly skeleton for photos grid !important
     const {state} = useLocation();
     const {location, locationName, locationId} = state;
     const locationRegion = location.region ? location.region + ", " : ''
